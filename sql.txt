@@ -1,0 +1,48 @@
+CREATE DATABASE restaurant_pos;
+
+USE DATABASE restaurant_pos;
+
+CREATE TABLE `category` ( 
+	`id` int(11) PRIMARY KEY auto_increment, 
+	`name` varchar(100) NOT NULL 
+) ENGINE=InnoDB
+
+INSERT INTO `category` (`name`) VALUES
+('Beverages'),
+('Breakfast'),
+('Chicken'),
+('Burgers'),
+('Salads');
+
+
+CREATE TABLE `item` (
+  `id` int(11) PRIMARY KEY auto_increment,
+  `category_id` int(11) DEFAULT NULL,
+  `name` varchar(350) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `calories` int(11),
+    `image` varchar(350) DEFAULT NULL,
+    CONSTRAINT fk_item FOREIGN KEY(`category_id`) REFERENCES category(id)
+) ENGINE=InnoDB;
+
+INSERT INTO item
+	(category_id,name,price,description,calories)
+VALUES 
+	('1','Sweet Tea',123,'Ice, water, orange pekoe & pekoe cut black tea, medium invert sugar',64),
+	('1','Chocolate Shake',123,'Milk, Sugar, Cream, Corn Syrup, Natural Flavor, Mono and Diglycerides, Cellulose Gum, Guar Gum, Carrageenan, Vitamin A Palmitate',520),
+	('1','Vanilla Shake',123,'Milk, Sugar, Cream, Corn Syrup, Natural Flavor, Mono and Diglycerides, Cellulose Gum, Guar Gum, Carrageenan, Vitamin A Palmitate',820),
+    	('1','Blue Raspberry Slushie',123,'Water, High Fructose Corn Syrup, Apple Juice from Concentrate, Citric Acid',340),
+     	('1','Iced Tea',123,'Water, Orange Pekoe and Pekoe Cut Black Tea., ice',2),
+     	('1','Zero Cola Soda',123,'Soda',1),
+     	('1','Plain Cream Cheese',123,'',80),
+	('2','Hotcakes',123,'Water, Enriched Flou, Whey, Corn Flour, Soybean Oil, Sugar, Eggs, Leavening, Dextrose, Emulsifier, Salt, Xanthan Gum, Natural Flavors, Beta Carotene (Color), Soy Lecithin.',330),
+    	('2','Hash Browns',123,'Hash Browns Ingredients: Potatoes, Vegetable Oil, Salt, Corn Flour, Dehydrated Potato, Dextrose, Sodium Acid Pyrophosphate (maintain Color), Extractives Of Black Pepper.',140),
+    	('2','Sausage Burrito',123,'Whole Eggs, Pork, Tomatoes, Skim Milk, Soybean Oil, Green Chilies, Onions, Modified Corn Starch,...',310),
+   	('2','Sausage McMuffin',123,'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine, Riboflavin, Folic Acid), Water, Yeast, Yellow Corn Meal,...',400),
+    	('2','Fruit & Maple Oatmeal',123,' Water, Whole Grain Rolled Oats, Brown Sugar, Modified Food Starch, Salt, Natural Flavor, Barley Malt Extract, Caramel Color,..',320 ),
+	('3','Chicken McNuggets',123,'White Boneless Chicken, Water, Vegetable Oil (Canola Oil, Corn Oil, Soybean Oil, Hydrogenated Soybean Oil,..',420 ),
+    	('4','Big Mac Burger',123,'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...',550 ),
+    	('5','Side Salad',123,'Water, Soybean Oil, Corn Syrup Solids, Buttermilk, Distilled Vinegar, Egg Yolks,...',160 );
+
+
