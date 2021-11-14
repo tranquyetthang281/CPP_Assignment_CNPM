@@ -15,6 +15,9 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
     <title>Document</title>
 </head>
 
+<?php
+?>
+
 <body>
     <div class="header">
         <h1>Quản lý sản phẩm</h1>
@@ -26,13 +29,12 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
                 <div class="nav-list">
                     <div class="all-item bg-primary mt-2">List of all items</div>
 
-                    <!-- <div class="categories">
-                        <div class="category mt-2">Beverages</div>
-                        <div class="category mt-2">Breakfast</div>
-                        <div class="category mt-2">Chicken</div>
-                        <div class="category mt-2">Burgers</div>
-                        <div class="category mt-2">Salads</div>
-                    </div> -->
+                    <div class="categories">
+                        <?php foreach ($data['category'] as $key => $value) { ?>
+
+                            <div class="category mt-2"> <?php echo $value['name']  ?> </div>
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="add-item bg-secondary mt-2">Add new item</div>
             </div>

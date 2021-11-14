@@ -6,4 +6,30 @@ class Database
     protected $username = "root";
     protected $password = "vertrigo";
     protected $dbname = 'restaurant_pos';
+    function __construct()
+    {
+        $this->conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->dbname) or die('Can\'t connect to database');
+        mysqli_set_charset($this->conn, 'utf8');
+    }
+    function __destruct()
+    {
+        if ($this->conn) {
+            mysqli_close($this->conn);
+        }
+    }
+    function query($sql = '')
+    {
+        return mysqli_query($this->conn, $sql);
+    }
+    function get_list($sql = '')
+    {
+        $data = [];
+        $result = $this->query($sql);
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
 }
