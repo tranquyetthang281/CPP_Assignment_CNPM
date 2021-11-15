@@ -19,9 +19,8 @@ class Home extends Controller
             'category_type' => -1
         );
     }
-    function Homepage()
+    function HomePage()
     {
-
         $this->view('layout', $this->data);
     }
     function Category($a = -1)
@@ -39,10 +38,5 @@ class Home extends Controller
 
         //call views
 
-    }
-    function Add()
-    {
-        $this->data['render'] = 'add';
-        $this->view('layout', $this->data);
     }
 }

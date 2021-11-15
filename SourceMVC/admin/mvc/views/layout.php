@@ -40,7 +40,7 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
                         <?php } ?>
                     </div>
                 </div>
-                <form action="<?php echo $DOMAIN ?>/Home/Add">
+                <form action="<?php echo $DOMAIN ?>/Add/AddPage">
                     <button class="add-item bg-secondary mt-2">Add new item</button>
                 </form>
 
