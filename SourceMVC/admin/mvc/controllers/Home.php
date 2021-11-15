@@ -38,4 +38,9 @@ class Home extends Controller
         //call views
 
     }
+    function Add()
+    {
+        $this->data['render'] = 'add';
+        $this->view('layout', $this->data);
+    }
 }

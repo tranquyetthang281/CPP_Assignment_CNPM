@@ -12,7 +12,8 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
     <script src="<?php echo $DOMAIN ?>/public/bootstrap5/jquery.min.js"></script>
     <script src="<?php echo $DOMAIN ?>/public/bootstrap5/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/style.css" />
-    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/script.js" />
+    <script src="<?php echo $DOMAIN ?>/public/script.js"></script>
+
     <title>Document</title>
 </head>
 
@@ -31,18 +32,15 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
                     <form action="<?php echo $DOMAIN ?>">
                         <button class="all-item bg-primary mt-2">List of all items</button>
                     </form>
-
-
                     <div class="categories">
                         <?php foreach ($data['category'] as $key => $value) { ?>
-                            <form action="<?php echo $DOMAIN ?>/Home/Category/<?php echo $value['id'] ?>" method="get">
+                            <form id="category<?php echo $value['id'] ?>" action="<?php echo $DOMAIN ?>/Home/Category/<?php echo $value['id'] ?>" method="get">
                                 <button class="category mt-2"> <?php echo $value['name']  ?> </button>
                             </form>
-
                         <?php } ?>
                     </div>
                 </div>
-                <form action="">
+                <form action="<?php echo $DOMAIN ?>/Home/Add">
                     <button class="add-item bg-secondary mt-2">Add new item</button>
                 </form>
 
@@ -52,9 +50,7 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
             </div>
         </div>
     </div>
-    <script>
 
-    </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
