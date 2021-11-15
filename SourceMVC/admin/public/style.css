@@ -42,6 +42,22 @@ body {
     background-color: #505050;
     color: white;
 }
+.category-checked {
+    background-color: #505050;
+    color: white;
+    animation: blink_background ease-in-out 1.5s infinite;
+}
+@keyframes blink_background {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .list-item {
     /* border: 1px solid; */
 }

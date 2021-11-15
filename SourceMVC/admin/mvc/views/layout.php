@@ -34,8 +34,8 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
                     </form>
                     <div class="categories">
                         <?php foreach ($data['category'] as $key => $value) { ?>
-                            <form id="category<?php echo $value['id'] ?>" action="<?php echo $DOMAIN ?>/Home/Category/<?php echo $value['id'] ?>" method="get">
-                                <button class="category mt-2"> <?php echo $value['name']  ?> </button>
+                            <form action="<?php echo $DOMAIN ?>/Home/Category/<?php echo $value['id'] ?>" method="get">
+                                <button class="category<?php echo $value['id'] == $data['category_type'] ? ' category-checked ' : ' ' ?>mt-2"> <?php echo $value['name']  ?> </button>
                             </form>
                         <?php } ?>
                     </div>

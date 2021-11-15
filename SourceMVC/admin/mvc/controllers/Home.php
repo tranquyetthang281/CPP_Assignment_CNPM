@@ -15,7 +15,8 @@ class Home extends Controller
         $this->data = array(
             'category' => $list_category,
             'item' => $all_item,
-            'render' => 'list'
+            'render' => 'list',
+            'category_type' => -1
         );
     }
     function Homepage()
@@ -33,6 +34,7 @@ class Home extends Controller
         $all_item = $item->get_item_category($a);
         $all_item = empty($all_item) ? $item->get_all_item() : $all_item;
         $this->data['item'] = $all_item;
+        $this->data['category_type'] = $a;
         $this->view('layout', $this->data);
 
         //call views
