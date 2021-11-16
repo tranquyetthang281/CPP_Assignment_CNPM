@@ -9,7 +9,7 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
             <div class="col-lg-4">
                 <div class="image-upload" style="background: url('<?php echo $DOMAIN . '/public/images/' . $data['item_info']['image'] ?>')"></div>
                 <label for="upload-photo" class="btn btn-success" id="label-upload">Update Image</label>
-                <input type="file" name="photo" id="upload-photo" />
+                <input type="file" name="photo" id="upload-photo" <?php if (!empty($data['item_info']['image'])) echo ('class="item_image' . $data['item_info']['image'] . '"') ?> />
             </div>
             <div class="col-lg-8">
                 <div>

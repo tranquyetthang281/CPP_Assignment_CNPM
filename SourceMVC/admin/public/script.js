@@ -33,7 +33,7 @@ $(document).ready(function () {
                         $(".alert-add").fadeOut();
                         $(".alert-add-text").text("");
                         $(".alert-add").removeClass("alert-danger");
-                    }, 3000);
+                    }, 1500);
                 } else if (result == "false") {
                     $(".alert-add").addClass("alert-danger");
                     $(".alert-add-text").text("Error! Can't add into database");
@@ -42,7 +42,7 @@ $(document).ready(function () {
                         $(".alert-add").fadeOut();
                         $(".alert-add-text").text("");
                         $(".alert-add").removeClass("alert-danger");
-                    }, 3000);
+                    }, 1500);
                 } else {
                     $(".alert-add").fadeIn();
                     $(".alert-add").addClass("alert-success");
@@ -51,13 +51,11 @@ $(document).ready(function () {
                         $(".alert-add").fadeOut();
                         $(".alert-add").removeClass("alert-success");
                         $(".alert-add-text").text("");
-                    }, 3000);
+                    }, 1500);
                     //reset form and image
                     $("#form_add")[0].reset();
                     $(".image-upload").css({
                         "background-image": "none",
-                        width: "0px",
-                        height: "0px",
                     });
                 }
             },
@@ -67,18 +65,19 @@ $(document).ready(function () {
     $(".button-reset").click(function () {
         $(".image-upload").css({
             "background-image": "none",
-            width: "0px",
-            height: "0px",
         });
     });
     //end ajax add item
     //ajax edit
     $(".button-edit").click(function () {
         var input_image = $("input[name='photo']").val();
-        input_image = input_image.substr(12, 999);
+        if (input_image) {
+            input_image = input_image.substr(12, 999);
+        } else {
+            input_image = $("input[name='photo']").attr("class").substr(10, 99999);
+        }
         var item_id = $(this).attr("id");
         item_id = item_id.substr(9, 999);
-        console.log(input_image);
         $.ajax({
             url: DOMAIN + "/Edit/DoEdit",
             method: "post",
@@ -100,7 +99,7 @@ $(document).ready(function () {
                         $(".alert-add").fadeOut();
                         $(".alert-add-text").text("");
                         $(".alert-add").removeClass("alert-danger");
-                    }, 3000);
+                    }, 1500);
                 } else if (result == "false") {
                     $(".alert-add").addClass("alert-danger");
                     $(".alert-add-text").text("Error! Can't edit");
@@ -109,7 +108,7 @@ $(document).ready(function () {
                         $(".alert-add").fadeOut();
                         $(".alert-add-text").text("");
                         $(".alert-add").removeClass("alert-danger");
-                    }, 3000);
+                    }, 1500);
                 } else {
                     $(".alert-add").fadeIn();
                     $(".alert-add").addClass("alert-success");
@@ -118,7 +117,7 @@ $(document).ready(function () {
                         $(".alert-add").fadeOut();
                         $(".alert-add").removeClass("alert-success");
                         $(".alert-add-text").text("");
-                    }, 3000);
+                    }, 1500);
                     //reset form and image
                 }
             },
