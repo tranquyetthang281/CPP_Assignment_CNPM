@@ -10,6 +10,7 @@ $(document).ready(function () {
             height: "200px",
         });
     });
+    //ajax add new item
     $(".alert-add").fadeOut();
     $(".button-add").click(function () {
         var input_image = $("input[name='photo']").val();
@@ -71,5 +72,28 @@ $(document).ready(function () {
             width: "0px",
             height: "0px",
         });
+    });
+    //end ajax add item
+    //ajax delete item
+    $(".delete-button").click(function () {
+        //get id of item
+
+        if (confirm("Do you want to delete this item?")) {
+            var item_id = $(this).parent().attr("id");
+            item_id = item_id.substr(4, 999);
+            $.ajax({
+                url: DOMAIN + "/Home/DeleteItem",
+                method: "post",
+                data: {
+                    item_id: item_id,
+                },
+                success: function (result) {
+                    $(".action").html(result);
+                },
+                error: function () {
+                    alert("Failed");
+                },
+            });
+        }
     });
 });

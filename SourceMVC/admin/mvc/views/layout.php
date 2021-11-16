@@ -29,9 +29,7 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
             <div class="col-lg-3 col-md-4 task">
                 <div class="title">TASK</div>
                 <div class="nav-list">
-                    <form action="<?php echo $DOMAIN ?>">
-                        <button class="all-item bg-primary mt-2">List of all items</button>
-                    </form>
+                    <button class="all-item bg-primary mt-2">List of all items</button>
                     <div class="categories">
                         <?php foreach ($data['category'] as $key => $value) { ?>
                             <form action="<?php echo $DOMAIN ?>/Home/Category/<?php echo $value['id'] ?>" method="get">
@@ -50,7 +48,6 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
             </div>
         </div>
     </div>
-
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

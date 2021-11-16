@@ -16,14 +16,14 @@ class Home extends Controller
             'category' => $list_category,
             'item' => $all_item,
             'render' => 'list',
-            'category_type' => -1
+            'category_type' => 1
         );
     }
     function HomePage()
     {
         $this->view('layout', $this->data);
     }
-    function Category($a = -1)
+    function Category($a = 1)
     {
         //cal model
         $item = $this->model('Item');
@@ -37,6 +37,19 @@ class Home extends Controller
         $this->view('layout', $this->data);
 
         //call views
+    }
+    function DeleteItem()
+    {
+        $item = $this->model('Item');
+        $data = $item->get_item_info($_POST['item_id']);
 
+        $item->do_delete_item((int)$data['id']);
+        $data = $data['category_id'];
+
+        //update view for client
+        $all_item = $item->get_item_category($data);
+        $this->data['item'] = $all_item;
+        $this->data['category_type'] = $data;
+        echo ($this->view('list', $this->data));
     }
 }

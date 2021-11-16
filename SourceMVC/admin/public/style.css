@@ -136,8 +136,8 @@ body {
     justify-content: center;
     background-color: white;
 }
-.button-plus ion-icon {
-    transition: 0.4s ease-in-out;
+.bottom:hover .button-plus ion-icon {
+    transform: rotate(-180deg);
 }
 .bottom:hover ion-icon {
     transform: rotate(-180deg);
@@ -148,6 +148,20 @@ body {
 .edit-text:hover {
     background-color: rgba(0, 0, 0, 0.85);
     color: white;
+}
+.delete-button {
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.2s;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+.delete-button:hover {
+    color: #dc3545;
+}
+ion-icon {
+    pointer-events: none;
 }
 
 /* action */
