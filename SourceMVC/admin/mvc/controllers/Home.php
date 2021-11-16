@@ -33,7 +33,7 @@ class Home extends Controller
         }
         //get all item from category which has id a
         $all_item = $item->get_item_category($a);
-        $all_item = empty($all_item) ? $item->get_all_item() : $all_item;
+
         $this->data['item'] = $all_item;
         $this->data['category_type'] = $a;
         $this->view('layout', $this->data);

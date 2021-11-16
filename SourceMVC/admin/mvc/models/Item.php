@@ -17,10 +17,16 @@ class Item extends Database
         $sql = " INSERT INTO item(category_id,name,price,description,calories,image) VALUES ('$category_id','$name','$price','$description','$calories','$image')";
         return $this->query($sql);
     }
+    function do_edit_item($id, $category_id, $name, $price, $description, $calories, $image)
+    {
+        $sql = "UPDATE item SET category_id = '$category_id',name = '$name',price = '$price',description = '$description',calories = '$calories',image = '$image' WHERE id = '$id'";
+        return $this->query($sql);
+    }
+
     function do_delete_item($id)
     {
         $sql = "DELETE FROM item WHERE id = $id";
-        $this->query($sql);
+        return $this->query($sql);
     }
     function get_item_info($id)
     {

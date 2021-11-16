@@ -99,7 +99,6 @@ body {
     transform: translateX(-50%);
 }
 .bottom .edit-text {
-    cursor: pointer;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -107,10 +106,10 @@ body {
     transition: 0.3s linear;
     width: 100px;
     height: 35px;
+    border: none;
+    box-shadow: none;
+    background: white;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 18px;
 }
 .bottom .button-plus {
@@ -136,10 +135,10 @@ body {
     justify-content: center;
     background-color: white;
 }
-.bottom:hover .button-plus ion-icon {
-    transform: rotate(-180deg);
+.button-plus ion-icon {
+    transition: 0.4s ease-in-out;
 }
-.bottom:hover ion-icon {
+.bottom:hover .button-plus ion-icon {
     transform: rotate(-180deg);
 }
 .bottom:hover .edit-text {
@@ -150,7 +149,9 @@ body {
     color: white;
 }
 .delete-button {
-    cursor: pointer;
+    background-color: white;
+    border: none;
+    box-shadow: none;
     font-size: 30px;
     transition: 0.2s;
     position: absolute;
@@ -179,8 +180,10 @@ ion-icon {
 }
 .action .image-upload {
     margin-left: 25px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
 }
 #label-upload {
     margin-top: 20px;
@@ -191,7 +194,4 @@ ion-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.contain-button button {
-    margin-top: 20px;
 }
