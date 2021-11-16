@@ -35,8 +35,8 @@
             </div>
         </div>
         <div class="contain-button">
-            <button class="btn btn-primary button-add">Add new</button>
-            <button type="reset" class="btn btn-danger ms-4 button-reset">Reset</button>
+            <button class="btn btn-primary button-add mt-3">Add new</button>
+            <button type="reset" class="btn btn-danger mt-3 ms-4 button-reset">Reset</button>
         </div>
         <div class="alert alert-add mt-4 mb-4">
             <strong class="alert-add-text"></strong>

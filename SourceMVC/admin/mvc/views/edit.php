@@ -40,7 +40,7 @@ $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
         </div>
         <div class="contain-button">
             <a href="<?php echo $DOMAIN . '\/Home\/Category\/' . $data['item_info']['category_id'] ?>" class="btn btn-success mt-3">Back</a>
-            <button class="btn btn-danger button-edit mt-3 ms-2" id="item_edit<?php echo $data['item_info']['id'] ?>">Edit Item</button>
+            <button class="btn btn-danger button-edit mt-3 ms-4" id="item_edit<?php echo $data['item_info']['id'] ?>">Edit Item</button>
         </div>
         <div class="alert alert-add mt-4 mb-4">
             <strong class="alert-add-text"></strong>
