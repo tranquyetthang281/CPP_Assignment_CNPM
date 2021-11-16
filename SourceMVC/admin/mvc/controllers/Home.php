@@ -9,7 +9,7 @@ class Home extends Controller
         $category = $this->model('Category');
         //get all items from model
 
-        $all_item = $item->get_all_item();
+        $all_item = $item->get_item_category(1);
         //get all category from model
         $list_category = $category->get_category();
         $this->data = array(
@@ -27,8 +27,10 @@ class Home extends Controller
     {
         //cal model
         $item = $this->model('Item');
-
-
+        //check is delete
+        if (isset($_POST['delete_item'])) {
+            $item->do_delete_item((int)$_POST['delete_item']);
+        }
         //get all item from category which has id a
         $all_item = $item->get_item_category($a);
         $all_item = empty($all_item) ? $item->get_all_item() : $all_item;
@@ -37,19 +39,5 @@ class Home extends Controller
         $this->view('layout', $this->data);
 
         //call views
-    }
-    function DeleteItem()
-    {
-        $item = $this->model('Item');
-        $data = $item->get_item_info($_POST['item_id']);
-
-        $item->do_delete_item((int)$data['id']);
-        $data = $data['category_id'];
-
-        //update view for client
-        $all_item = $item->get_item_category($data);
-        $this->data['item'] = $all_item;
-        $this->data['category_type'] = $data;
-        echo ($this->view('list', $this->data));
     }
 }

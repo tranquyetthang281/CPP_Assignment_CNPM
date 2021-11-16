@@ -15,11 +15,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="delete-button">
-                    <span title="Delete">
-                        <ion-icon name="close-circle-outline"></ion-icon>
-                    </span>
-                </div>
+                <form action="<?php echo $DOMAIN ?>/Home/Category/<?php echo $value['category_id'] ?>" method="POST" onsubmit="return confirm('Do you want to delete this item')">
+                    <button class="delete-button">
+                        <span title="Delete">
+                            <ion-icon name="close-circle-outline"></ion-icon>
+                        </span>
+                        <input type="hidden" name="delete_item" value="<?php echo $value['id'] ?>">
+                    </button>
+                </form>
+
             </div>
         <?php } ?>
 
