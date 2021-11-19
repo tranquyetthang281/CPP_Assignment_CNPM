@@ -28,7 +28,6 @@ $(".quantity-change").click(function () {
 });
 $(".remove-item").click(function () {
     item_id = parseInt($(this).parent().attr("id").slice(9));
-    console.log(item_id);
     if (confirm("Do you want to remove this item?")) {
         $.ajax({
             url: DOMAIN + "/Cart/Remove",

@@ -12,9 +12,11 @@ class Home extends Controller
         $this->categoryModel = $this->model("CategoryModel");
 
         $all_category = $this->categoryModel->get_category();
-
+        $this->data = array(
+            'page' => 'homePage'
+        );
         foreach ($all_category as $category) {
-            $this->data[] = array(
+            $this->data['category_list'][] = array(
                 'category' => $category,
                 'items' => $this->getItemsCategory($category['id'])
             );
