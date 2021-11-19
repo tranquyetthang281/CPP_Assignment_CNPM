@@ -1,4 +1,4 @@
-<?php $DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin'; ?>
+<?php $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/admin'; ?>
 <div class="content list-item">
     <div class="row justify-content-center">
         <?php foreach ($data['item'] as $key => $value) { ?>

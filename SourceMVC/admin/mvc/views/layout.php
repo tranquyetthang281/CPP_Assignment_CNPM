@@ -1,5 +1,5 @@
 <?php
-$DOMAIN = 'http://localhost/Project/CPP_Assignment_CNPM/SourceMVC/admin';
+$DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/admin';
 ?>
 <!DOCTYPE html>
 <html lang="en">
