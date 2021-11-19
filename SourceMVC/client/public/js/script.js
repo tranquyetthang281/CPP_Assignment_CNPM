@@ -47,6 +47,7 @@ function totalPrice() {
     return total;
 }
 $(".total").text("Total: " + totalPrice() + "$");
+// handle buy now click
 $(".buy-now").click(function () {
     var item_id = $(this).attr("id").slice(4);
     $.ajax({
@@ -61,5 +62,31 @@ $(".buy-now").click(function () {
         },
     });
 });
-
+//handle increase decrease
+$(".quantity-change").click(function () {
+    //get id item
+    var item_id = $(this).parent().parent().attr("id").slice(9);
+    var val = parseInt($(this).parent().children(".number").text());
+    if ($(this).hasClass("increase")) {
+        val++;
+    } else {
+        val = val == 0 ? 0 : val - 1;
+    }
+    $(this).parent().children(".number").text(val);
+    $.ajax({
+        url: DOMAIN + "/Cart/updatePrice",
+        method: "post",
+        data: {
+            item_id: item_id,
+            val: val,
+        },
+        success: function (result) {
+            // console.log(result);
+            $("#cart-item" + item_id)
+                .children(".price-item-cart")
+                .text(result + "$");
+            $(".total").text("Total: " + totalPrice() + "$");
+        },
+    });
+});
 // end cart

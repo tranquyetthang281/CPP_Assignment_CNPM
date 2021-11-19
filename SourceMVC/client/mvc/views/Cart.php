@@ -6,17 +6,17 @@
         <?php
         $cart = $_SESSION;
         foreach ($cart as $key => $value) { ?>
-            <div class="item" id="cart-item<?php $value['id'] ?>">
+            <div class="item" id="cart-item<?php echo $value['id'] ?>">
                 <img src="./burger.png" alt="" />
                 <div class="name">
                     <?php echo ($key)  ?>
                 </div>
                 <div class="quantity">
-                    <div class="decrease">
+                    <div class="decrease quantity-change">
                         <ion-icon name="remove-outline"></ion-icon>
                     </div>
-                    <div class="number"><?php echo $value['val'] ?></div>
-                    <div class="increase">
+                    <div class="quantity-num number"><?php echo $value['val'] ?></div>
+                    <div class="increase quantity-change">
                         <ion-icon name="add-outline"></ion-icon>
                     </div>
                 </div>
@@ -32,3 +32,6 @@
         <div class="checkout-button">Checkout</div>
     </div>
 </div>
+<script>
+    var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC/client";
+</script>
