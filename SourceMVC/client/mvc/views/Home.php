@@ -88,11 +88,25 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
                     </div>
                     <a herf="#" class="read-more">Read more</a>
                 </div>
-            <?php } ?>
+            <?php }
+            ?>
         </div>
-        <div class="list-item-cart">
-            <?php require_once "Cart.php" ?>
+
+
+        <div class="offcanvas offcanvas-end" id="my-cart">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title">My Cart</h1>
+            </div>
+            <div class="offcanvas-body list-item-cart">
+                <?php require_once "Cart.php" ?>
+            </div>
+            <div class="checkout">
+                <div class="total">Total:</div>
+                <div class="checkout-button">Checkout</div>
+            </div>
         </div>
+
+
     </div>
     <!-- content end -->
     <!-- footer start -->

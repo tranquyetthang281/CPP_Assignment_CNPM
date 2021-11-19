@@ -34,4 +34,11 @@ class Cart extends Controller
         ));
         echo ($item_info['price'] * (int)$_POST['val']);
     }
+    function Remove()
+    {
+        $item = $this->model("ItemModel");
+        $item_info = $item->get_item_info($_POST['item_id']);
+        ss_delete($item_info['name']);
+        echo ($this->view('Cart'));
+    }
 }
