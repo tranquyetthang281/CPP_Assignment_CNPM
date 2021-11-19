@@ -339,6 +339,7 @@ header .cart {
     cursor: pointer;
     border: 1px solid #ffa500;
     overflow: hidden;
+    user-select: none;
 }
 .category .buy-now:hover {
     color: black;

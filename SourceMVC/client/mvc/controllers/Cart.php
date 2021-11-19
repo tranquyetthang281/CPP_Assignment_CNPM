@@ -5,18 +5,22 @@ class Cart extends Controller
     {
         $item = $this->model("ItemModel");
         $item_info = $item->get_item_info($_POST['item_id']);
+
         if (!ss_get($item_info['name'])) {
-            ss_set($item_info['name'], 1);
+            ss_set($item_info['name'], array(
+                'id' => $item_info['id'],
+                'total_price' => $item_info['price'],
+                'val' => 1
+            ));
         } else {
-            $val = ss_get($item_info['name']);
+            $val = ss_get($item_info['name'])['val'];
             $val++;
-            ss_set($item_info['name'], $val);
+            ss_set($item_info['name'], array(
+                'id' => $item_info['id'],
+                'total_price' => (int)$item_info['price'] * $val,
+                'val' => $val
+            ));
         }
-        $result = array();
-        foreach ($_SESSION as $key => $val) {
-            $result[$key] = $val;
-        }
-        // session_destroy();
-        echo json_encode($result);
+        echo ($this->view('Cart'));
     }
 }

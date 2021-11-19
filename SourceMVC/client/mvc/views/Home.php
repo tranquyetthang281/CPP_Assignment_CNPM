@@ -90,7 +90,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
                 </div>
             <?php } ?>
         </div>
-        <?php require_once "Cart.php" ?>
+        <div class="list-item-cart">
+            <?php require_once "Cart.php" ?>
+        </div>
     </div>
     <!-- content end -->
     <!-- footer start -->
@@ -112,6 +114,14 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <!-- footer end -->
     <script>
         var DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
+
+        function totalPrice() {
+            var total = 0;
+            $('.price-item-cart').each(function(index, val) {
+                total += (parseInt(val.textContent))
+            })
+            return total;
+        }
         $('.buy-now').click(function() {
             var item_id = $(this).attr('id').slice(4);
             $.ajax({
@@ -121,7 +131,8 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
                     item_id: item_id
                 },
                 success: function(result) {
-                    console.log(result);
+                    $('.list-item-cart').html(result);
+                    $('.total').text(totalPrice() + '$')
                 }
             })
 
