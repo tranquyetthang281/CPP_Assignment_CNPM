@@ -11,7 +11,7 @@ class App
     {
         $arr = $this->UrlProcess();
         // Handle Controller
-        if (isset($arr[0]) && file_exists("./mvc/core/Controller/" . $arr[0] . ".php")) {
+        if (isset($arr[0]) && file_exists("./mvc/controllers/" . $arr[0] . ".php")) {
             $this->controller = $arr[0];
             unset($arr[0]);
         }
@@ -29,7 +29,6 @@ class App
 
         // Handle Params
         $this->params = $arr ? array_values($arr) : [];
-
         // Call controller function
         call_user_func_array([$this->controller, $this->action], $this->params);
     }

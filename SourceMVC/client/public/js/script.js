@@ -1,4 +1,5 @@
 //scroll
+var DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
 $(".categories").hide();
 
 window.addEventListener("scroll", function () {

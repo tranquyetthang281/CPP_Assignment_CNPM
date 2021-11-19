@@ -4,7 +4,7 @@ class Database
     public $conn;
     protected $hostname = "localhost";
     protected $username = "root";
-    protected $password = "";
+    protected $password = "vertrigo";
     protected $dbname = "restaurant_pos";
     function __construct()
     {
@@ -29,6 +29,15 @@ class Database
             while ($row = mysqli_fetch_assoc($result)) {
                 $data[] = $row;
             }
+        }
+        return $data;
+    }
+    function get_one($sql = '')
+    {
+        $result = $this->query($sql);
+        $data = '';
+        if ($result) {
+            $data = mysqli_fetch_assoc($result);
         }
         return $data;
     }

@@ -36,7 +36,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     </header>
 
     <!-- header  end -->
- 
+
     <!-- contentstart -->
     <div class="container content">
         <!-- banner start -->
@@ -81,7 +81,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
                                     <img src="<?php echo $DOMAIN ?>/public/images/burger2.png" alt="  " />
                                     <div class="name"><?php echo $item['name'] ?></div>
                                     <div class="price"><?php echo $item['price'] ?></div>
-                                    <div class="buy-now">Buy Now</div>
+                                    <div class="buy-now" id="item<?php echo $item['id'] ?>">Buy Now</div>
                                 </div>
                             <?php } ?>
                         </div>
@@ -90,9 +90,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
                 </div>
             <?php } ?>
         </div>
+        <?php require_once "Cart.php" ?>
     </div>
     <!-- content end -->
-
     <!-- footer start -->
     <footer>
         <div class="footer">
@@ -110,7 +110,23 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         </div>
     </footer>
     <!-- footer end -->
+    <script>
+        var DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
+        $('.buy-now').click(function() {
+            var item_id = $(this).attr('id').slice(4);
+            $.ajax({
+                url: DOMAIN + '/Cart/AddItem',
+                method: 'post',
+                data: {
+                    item_id: item_id
+                },
+                success: function(result) {
+                    console.log(result);
+                }
+            })
 
+        })
+    </script>
     <script src="<?php echo $DOMAIN ?>/public/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
