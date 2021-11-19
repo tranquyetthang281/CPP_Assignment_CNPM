@@ -1,5 +1,5 @@
 //scroll
-var DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
+var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC/client";
 $(".categories").hide();
 
 window.addEventListener("scroll", function () {
@@ -37,3 +37,29 @@ function setCheck() {
     $(".checked")[0].className = $(".checked")[0].className.replace(" checked", "");
     $(".bar")[count].className += " checked";
 }
+// cart
+//update total price
+function totalPrice() {
+    var total = 0;
+    $(".price-item-cart").each(function (index, val) {
+        total += parseInt(val.textContent);
+    });
+    return total;
+}
+$(".total").text("Total: " + totalPrice() + "$");
+$(".buy-now").click(function () {
+    var item_id = $(this).attr("id").slice(4);
+    $.ajax({
+        url: DOMAIN + "/Cart/AddItem",
+        method: "post",
+        data: {
+            item_id: item_id,
+        },
+        success: function (result) {
+            $(".list-item-cart").html(result);
+            $(".total").text("Total: " + totalPrice() + "$");
+        },
+    });
+});
+
+// end cart

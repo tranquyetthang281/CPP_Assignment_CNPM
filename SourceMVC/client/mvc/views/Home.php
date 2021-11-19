@@ -113,30 +113,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     </footer>
     <!-- footer end -->
     <script>
-        var DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
 
-        function totalPrice() {
-            var total = 0;
-            $('.price-item-cart').each(function(index, val) {
-                total += (parseInt(val.textContent))
-            })
-            return total;
-        }
-        $('.buy-now').click(function() {
-            var item_id = $(this).attr('id').slice(4);
-            $.ajax({
-                url: DOMAIN + '/Cart/AddItem',
-                method: 'post',
-                data: {
-                    item_id: item_id
-                },
-                success: function(result) {
-                    $('.list-item-cart').html(result);
-                    $('.total').text(totalPrice() + '$')
-                }
-            })
-
-        })
     </script>
     <script src="<?php echo $DOMAIN ?>/public/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
