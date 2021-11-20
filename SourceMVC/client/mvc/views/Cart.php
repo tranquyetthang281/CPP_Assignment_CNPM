@@ -4,7 +4,7 @@ if ($cart) {
 
     foreach ($cart as $key => $value) { ?>
         <div class="item" id="cart-item<?php echo $value['id'] ?>">
-            <img src="./burger.png" alt="" />
+            <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $value['image'] ?>" alt="" />
             <div class="name">
                 <?php echo ($key)  ?>
             </div>

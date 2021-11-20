@@ -42,3 +42,15 @@ $(".remove-item").click(function () {
         });
     }
 });
+function removeAll() {
+    if (confirm("Do you want to remove all items")) {
+        $.ajax({
+            url: DOMAIN + "/Cart/RemoveAll",
+            type: "post",
+            success: function () {
+                $(".list-item-cart").html("");
+                $(".total").text("Total: " + totalPrice() + "$");
+            },
+        });
+    }
+}

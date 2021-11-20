@@ -9,6 +9,7 @@ class Cart extends Controller
         if (!ss_get($item_info['name'])) {
             ss_set($item_info['name'], array(
                 'id' => $item_info['id'],
+                'image' => $item_info['image'],
                 'total_price' => $item_info['price'],
                 'val' => 1
             ));
@@ -17,6 +18,7 @@ class Cart extends Controller
             $val++;
             ss_set($item_info['name'], array(
                 'id' => $item_info['id'],
+                'image' => $item_info['image'],
                 'total_price' => (int)$item_info['price'] * $val,
                 'val' => $val
             ));
@@ -29,6 +31,7 @@ class Cart extends Controller
         $item_info = $item->get_item_info($_POST['item_id']);
         ss_set($item_info['name'], array(
             'id' => $item_info['id'],
+            'image' => $item_info['image'],
             'total_price' => $item_info['price'] * (int)$_POST['val'],
             'val' => (int)$_POST['val']
         ));
@@ -40,5 +43,10 @@ class Cart extends Controller
         $item_info = $item->get_item_info($_POST['item_id']);
         ss_delete($item_info['name']);
         echo ($this->view('Cart'));
+    }
+    function RemoveAll()
+    {
+        $item = $this->model("ItemModel");
+        session_destroy();
     }
 }

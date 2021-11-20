@@ -496,12 +496,13 @@ header .cart {
     user-select: none;
     cursor: pointer;
 }
+
 .checkout {
     height: 100px;
     width: 100%;
     position: fixed;
     bottom: 0px;
-    background-color: #1d1d1d;
+    background-color: #272727;
 }
 .checkout::before {
     content: "";
@@ -520,12 +521,28 @@ header .cart {
     justify-content: center;
     align-items: center;
     z-index: 100;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 10%;
+    transition: 0.2s linear;
     left: 230px;
 }
+.remove-all {
+    cursor: pointer;
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    bottom: 10%;
+    left: 230px;
+    transition: 0.2s linear;
+}
 .checkout-button::before,
-.checkout-button::after {
+.checkout-button::after,
+.remove-all::before,
+.remove-all::after {
     content: "";
     position: absolute;
     width: 0px;
@@ -533,11 +550,13 @@ header .cart {
     border: 2px solid transparent;
     transition: 0.2s linear;
 }
-.checkout-button::before {
+.checkout-button::before,
+.remove-all::before {
     top: 0px;
     left: 0px;
 }
-.checkout-button::after {
+.checkout-button::after,
+.remove-all::after {
     bottom: 0px;
     right: 0px;
 }
@@ -553,6 +572,24 @@ header .cart {
     border-right: 2px solid #ffa500;
     width: 100%;
     height: 100%;
+}
+.remove-all:hover::before {
+    border-top: 2px solid #dc3545;
+    border-left: 2px solid #dc3545;
+    width: 100%;
+    height: 100%;
+}
+.remove-all:hover::after {
+    border-bottom: 2px solid #dc3545;
+    border-right: 2px solid #dc3545;
+    width: 100%;
+    height: 100%;
+}
+.remove-all:hover {
+    color: #dc3545;
+}
+.checkout-button:hover {
+    color: #ffa500;
 }
 .total {
     position: absolute;

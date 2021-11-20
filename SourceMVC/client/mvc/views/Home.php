@@ -59,6 +59,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         <div class="checkout">
             <div class="total">Total:</div>
             <div class="checkout-button">Checkout</div>
+            <div class="remove-all" onclick="removeAll()">Remove all</div>
         </div>
     </div>
     <!-- footer start -->
@@ -79,7 +80,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     </footer>
     <!-- footer end -->
     <script>
-        var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC/client";
+
     </script>
     <script src="<?php echo $DOMAIN ?>/public/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
