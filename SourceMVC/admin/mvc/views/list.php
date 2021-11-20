@@ -4,7 +4,7 @@
         <?php foreach ($data['item'] as $key => $value) { ?>
             <div class="col-lg-3 col-md-6 item" id="item<?php echo $value['id'] ?>">
                 <div class="contain-item">
-                    <img src="<?php echo $DOMAIN ?>/public/images/<?php echo $value['image'] ?>" alt="<?php echo $value['name'] ?>" />
+                    <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $value['image'] ?>" alt="<?php echo $value['name'] ?>" />
                     <div class="item-name"><?php echo $value['name'] ?></div>
                     <div class="bottom">
                         <form action="<?php echo $DOMAIN ?>/Edit/EditPage" method="POST">

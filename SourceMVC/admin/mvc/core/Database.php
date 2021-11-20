@@ -4,7 +4,7 @@ class Database
     public $conn;
     protected $hostname = "localhost";
     protected $username = "root";
-    protected $password = "vertrigo";
+    protected $password = "";
     protected $dbname = 'restaurant_pos';
     function __construct()
     {

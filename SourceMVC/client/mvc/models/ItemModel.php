@@ -17,4 +17,9 @@ class ItemModel extends Database
         $sql = "SELECT * FROM item where id=$id";
         return $this->get_one($sql);
     }
+    function get_item_search($keyword)
+    {
+        $sql = "SELECT * FROM item WHERE name LIKE '%$keyword%'";
+        return $this->get_list($sql);
+    }
 }

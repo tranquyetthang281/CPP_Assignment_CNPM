@@ -27,7 +27,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
             <h1>Restaurant POS</h1>
         </div>
         <div class="search-bar">
-            <input type="text" class="form-control" placeholder="Search..." />
+            <input type="text" class="form-control search-item" placeholder="Search..." />
             <ion-icon class="icon-search" name="search-outline"></ion-icon>
         </div>
         <div class="cart" data-bs-target="#my-cart" data-bs-toggle="offcanvas">
@@ -36,7 +36,11 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     </header>
 
     <!-- header  end -->
+    <!-- searchbox -->
+    <div class="search-box hidden">
+    </div>
 
+    <!-- searchbox-end -->
     <!-- contentstart -->
     <div class="container content">
         <!-- banner start -->
@@ -74,7 +78,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         </div>
     </footer>
     <!-- footer end -->
-
+    <script>
+        var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC/client";
+    </script>
     <script src="<?php echo $DOMAIN ?>/public/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

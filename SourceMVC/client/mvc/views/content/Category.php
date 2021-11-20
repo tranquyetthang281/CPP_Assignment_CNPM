@@ -11,14 +11,15 @@
             <div class="d-flex justify-content-start flex-wrap">
 
                 <?php foreach ($data['items_category'] as $key => $item) {
-                    if ($key <= 3) { ?>
-                        <div class="item">
-                            <img src="<?php echo $DOMAIN ?>/public/images/burger2.png" alt="  " />
-                            <div class="name"><?php echo $item['name'] ?></div>
-                            <div class="price"><?php echo $item['price'] ?></div>
-                            <div class="buy-now" id="item<?php echo $item['id'] ?>">Buy Now</div>
+                ?>
+                    <div class="item">
+                        <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt=" " />
+                        <div class=" name"><?php echo $item['name'] ?>
                         </div>
-                <?php }
+                        <div class="price"><?php echo $item['price'] ?></div>
+                        <div class="buy-now item<?php echo $item['id'] ?>">Buy Now</div>
+                    </div>
+                <?php
                 } ?>
             </div>
         </div>

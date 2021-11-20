@@ -9,11 +9,11 @@ window.onload = function () {
             $(".categories").fadeOut();
         }
     });
-};
+    $(".scroll-menu").click(function () {
+        var id = $(this).index() + 1;
+        document.getElementById("menu" + id).scrollIntoView({ block: "center" });
+    });
 
-$(".scroll-menu").click(function () {
-    var id = $(this).index() + 1;
-    document.getElementById("menu" + id).scrollIntoView({ block: "center" });
     // slide
     var count = 0;
     setInterval(function () {
@@ -37,7 +37,7 @@ $(".scroll-menu").click(function () {
         $(".checked")[0].className = $(".checked")[0].className.replace(" checked", "");
         $(".bar")[count].className += " checked";
     }
-});
+};
 
 // cart
 //update total price
@@ -51,7 +51,7 @@ function totalPrice() {
 $(".total").text("Total: " + totalPrice() + "$");
 // handle buy now click
 $(".buy-now").click(function () {
-    var item_id = $(this).attr("id").slice(4);
+    var item_id = $(this).attr("class").split(" ")[1].slice(4);
     console.log(item_id);
     $.ajax({
         url: DOMAIN + "/Cart/AddItem",
@@ -66,17 +66,28 @@ $(".buy-now").click(function () {
     });
 });
 
-//handle readmore
-// $(".read-more").click(function () {
-//     var category_id = $(this).parent().attr("id").slice(4);
-//     $.ajax({
-//         url: DOMAIN + "/Category/getCategory",
-//         type: "post",
-//         data: {
-//             category_id: parseInt(category_id),
-//         },
-//         success: function (result) {
-//             $(".content").html(result);
-//         },
-//     });
-// });
+//search event
+$(".search-bar").focusin(function () {
+    if ($(".search-box").hasClass("hidden")) {
+        $(".search-box").removeClass("hidden");
+    }
+});
+$(".search-bar").focusout(function () {
+    setTimeout(function () {
+        if (!$(".search-box").hasClass("hidden")) {
+            $(".search-box").addClass("hidden");
+        }
+    }, 500);
+});
+$(".search-item").keyup(function () {
+    $.ajax({
+        url: DOMAIN + "/Search/searchItem",
+        type: "post",
+        data: {
+            keyword: $(this).val(),
+        },
+        success: function (result) {
+            $(".search-box").html(result);
+        },
+    });
+});
