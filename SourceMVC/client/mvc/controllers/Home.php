@@ -13,7 +13,7 @@ class Home extends Controller
 
         $all_category = $this->categoryModel->get_category();
         $this->data = array(
-            'page' => 'homePage'
+            'page' => 'HomePage'
         );
         foreach ($all_category as $category) {
             $this->data['category_list'][] = array(
