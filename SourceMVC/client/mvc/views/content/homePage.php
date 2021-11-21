@@ -38,7 +38,10 @@
                     <?php foreach ($value['items'] as $key => $item) {
                         if ($key <= 3) { ?>
                             <div class="item">
-                                <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt="  " />
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#detail">
+                                    <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt="  " />
+                                </button>
+                                <?php require_once "DetailItemView.php" ?>
                                 <div class="name"><?php echo $item['name'] ?></div>
                                 <div class="price"><?php echo $item['price'] ?></div>
                                 <div class="buy-now item<?php echo $item['id'] ?>">Buy Now</div>
