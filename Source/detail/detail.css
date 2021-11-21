@@ -1,4 +1,4 @@
-img{
+.img-detail{
     width: 500px;
     height: 400px;
 }
@@ -6,7 +6,7 @@ img{
     font-family: block-pro, "Helvetica Neue", Verdana, Arial, sans-serif;
 }
 /*button số lượng*/
-.buttons_added {
+.buttons-added-detail {
     opacity:1;
     display:inline-block;
     display:-ms-inline-flexbox;
@@ -14,7 +14,7 @@ img{
     white-space:nowrap;
     vertical-align:top;
 }
-.is-form {
+.is-form-detail {
     overflow:hidden;
     position:relative;
     background-color:#f9f9f9;
@@ -24,16 +24,16 @@ img{
     text-shadow:1px 1px 1px #fff;
     border:1px solid #ddd;
 }
-.is-form:focus,.input-text:focus {
+.is-form-detail:focus,.input-text:focus {
     outline:none;
 }
-.is-form.minus {
+.is-form-detail.minus {
     border-radius:4px 0 0 4px;
 }
-.is-form.plus {
+.is-form-detail.plus {
     border-radius:0 4px 4px 0;
 }
-.input-qty {
+.input-qty-detail {
     background-color:#fff;
     height:2.2rem;
     text-align:center;
@@ -46,35 +46,35 @@ img{
     border-right:0;
     padding:0;
 }
-.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+.input-qty-detail::-webkit-outer-spin-button,.input-qty-detail::-webkit-inner-spin-button {
     -webkit-appearance:none;
     margin:0;
 }
-h5{
+.modal-title{
     font-family: block-pro, "Helvetica Neue", Verdana, Arial, sans-serif;
     font-weight:bolder;
     font-size: 24px;
     color: rgb(206, 187, 113);
 }
-.disc{
+.disc-detail{
     font-family: sfudinengalt, "Helvetica Neue", Verdana, Arial, sans-serif;
     font-weight:bolder;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.52);
 }
-#price{
+#price-detail{
     font-family: block-pro, "Helvetica Neue", Verdana, Arial, sans-serif;
     font-weight:bolder;
     font-size: 24px;
     color: #c31c1c;
 }
-.calories{
+.calories-detail{
    max-width: 400px;
    padding: 0;
    margin: 0;
    border: solid 1px rgb(177, 177, 177);
 }
-.calories .row1{
+.calories-detail .row1{
     font-family: block-pro, "Helvetica Neue", Verdana, Arial, sans-serif;
     font-weight:bolder;
     font-size: 24px;
@@ -84,7 +84,7 @@ h5{
    
    margin: 0 auto;
 }
-.calories .row2{
+.calories-detail .row2{
    margin: 0 auto;
    font-size: 16px;
    color: black;
