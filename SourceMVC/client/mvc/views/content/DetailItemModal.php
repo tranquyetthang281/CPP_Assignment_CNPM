@@ -30,25 +30,25 @@
 
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col-md-9">
+                                    <!-- <div class="col-md-9">
                                         <label for="buttons-added-detail"><b>Số lượng:</b></label><br>
                                         <div class="buttons-added-detail">
                                             <input class="minus is-form-detail" type="button" value="-" onclick=" decPrice()">
                                             <input aria-label="quantity" class="input-qty-detail" max="10" min="0" name="soluong" type="number" value="0">
                                             <input class="plus is-form-detail" type="button" value="+" onclick=" incPrice()">
                                         </div>
-                                    </div>
-                                    <div class="col-md-3 d-flex justify-content-center align-items-center">
-                                        <span id="price-detail"> 0đ </span>
+                                    </div> -->
+                                    <div class="col-md-12 d-flex justify-content-left align-items-left">
+                                        <span id="price-detail"> Price: <?php echo $item['price'] ?>$</span>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <button type="button" class="btn btn-danger add-to-cart id<?php echo $item['id'] ?>" id="hahaha">Add to card</button>
+                                    <button type="button" class="add-to-cart btn btn-danger id<?php echo $item['id'] ?> ?>" id="hahaha">Add to card</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>

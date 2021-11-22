@@ -38,7 +38,7 @@
                     <?php foreach ($value['items'] as $key => $item) {
                         if ($key <= 3) { ?>
                             <div class="item">
-                                <?php include "DetailItemView.php" ?>
+                                <?php include "DetailItemModal.php" ?>
                                 <div type="button" data-bs-toggle="modal" data-bs-target="#detail<?php echo $item['id'] ?>">
                                     <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt="  " />
                                 </div>

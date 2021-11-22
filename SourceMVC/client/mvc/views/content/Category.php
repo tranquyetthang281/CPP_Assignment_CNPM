@@ -13,7 +13,10 @@
                 <?php foreach ($data['items_category'] as $key => $item) {
                 ?>
                     <div class="item">
-                        <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt=" " />
+                        <div type="button" data-bs-toggle="modal" data-bs-target="#detail<?php echo $item['id'] ?>">
+                            <?php include "DetailItemModal.php" ?>
+                            <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt=" " />
+                        </div>
                         <div class=" name"><?php echo $item['name'] ?>
                         </div>
                         <div class="price"><?php echo $item['price'] ?></div>
