@@ -43,7 +43,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <!-- searchbox-end -->
     <!-- contentstart -->
     <div class="container content">
-        
+
         <?php require_once "content/" . $data['page'] . '.php' ?>
 
     </div>

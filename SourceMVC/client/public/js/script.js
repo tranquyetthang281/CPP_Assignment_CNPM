@@ -117,3 +117,20 @@ $('input.input-qty-detail').each(function() {
         $this.attr('value', d).val(d)
     })
 })
+
+// handle add-to-cart click
+$(".add-to-cart").click(function () {
+    var item_id = $(this).attr("class").split(" ")[3].slice(2);
+    console.log(item_id);
+    $.ajax({
+        url: DOMAIN + "/Cart/AddItem",
+        method: "post",
+        data: {
+            item_id: item_id,
+        },
+        success: function (result) {
+            $(".list-item-cart").html(result);
+            $(".total").text("Total: " + totalPrice() + "$");
+        },
+    });
+});

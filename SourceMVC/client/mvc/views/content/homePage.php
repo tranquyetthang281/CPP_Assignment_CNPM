@@ -14,7 +14,7 @@
             <div id="4" class="bar"></div>
         </div>
     </div>
-    <!-- slide -->
+    <!-- slide end-->
     <div class="banner-left">
         <div class="banner2"></div>
         <div class="banner3"></div>
@@ -38,10 +38,10 @@
                     <?php foreach ($value['items'] as $key => $item) {
                         if ($key <= 3) { ?>
                             <div class="item">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#detail">
+                                <?php include "DetailItemView.php" ?>
+                                <div type="button" data-bs-toggle="modal" data-bs-target="#detail<?php echo $item['id'] ?>">
                                     <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt="  " />
-                                </button>
-                                <?php require_once "DetailItemView.php" ?>
+                                </div>
                                 <div class="name"><?php echo $item['name'] ?></div>
                                 <div class="price"><?php echo $item['price'] ?></div>
                                 <div class="buy-now item<?php echo $item['id'] ?>">Buy Now</div>

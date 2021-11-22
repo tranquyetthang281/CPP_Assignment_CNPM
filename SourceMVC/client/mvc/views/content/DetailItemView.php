@@ -1,5 +1,5 @@
     <!--Detail-->
-    <div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
+    <div class="modal fade" id="detail<?php echo $item['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="title" aria-hidden="true">
         <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
             <div class="modal-content proper">
                 <div class="modal-header d-flex justify-content-center">
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <button type="button" class="btn btn-danger">Buy Now</button>
+                                    <button type="button" class="btn btn-danger add-to-cart id<?php echo $item['id'] ?>" id="hahaha">Add to card</button>
                                 </div>
                             </div>
                         </div>

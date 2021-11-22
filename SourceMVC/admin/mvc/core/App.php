@@ -9,7 +9,7 @@ class App
         $arr = $this->UrlProcess();
 
         //get controller
-        if (file_exists('./mvc/controllers/' . $arr[0] . '.php')) {
+        if (isset($arr[0]) && file_exists('./mvc/controllers/' . $arr[0] . '.php')) {
             $this->controller = $arr[0];
             unset($arr[0]);
         }
