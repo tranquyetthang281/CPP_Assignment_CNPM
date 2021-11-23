@@ -49,4 +49,14 @@ class Cart extends Controller
         $item = $this->model("ItemModel");
         session_destroy();
     }
+    function getCount()
+    {
+        $result = 0;
+        if ($_SESSION) {
+            foreach ($_SESSION as $key => $val) {
+                $result += (int)$val['val'];
+            }
+        }
+        echo $result;
+    }
 }

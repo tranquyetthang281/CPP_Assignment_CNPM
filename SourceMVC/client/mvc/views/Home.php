@@ -35,9 +35,12 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         <?php if ($data['page'] != 'Checkout') { ?>
             <div class="cart" data-bs-target="#my-cart" data-bs-toggle="offcanvas">
                 <ion-icon name="cart-outline"></ion-icon>
+                <span class="badge bg-danger count-item"></span>
             </div>
         <?php } ?>
-
+        <div class="alert alert-success w-25 message-add">
+            <strong>Item has been added to your cart!</strong>
+        </div>
     </header>
 
     <!-- header  end -->
@@ -90,6 +93,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <script src="<?php echo $DOMAIN ?>/public/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      
+    </script>
 </body>
 
 </html>

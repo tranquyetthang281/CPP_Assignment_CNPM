@@ -6,4 +6,9 @@ class Checkout extends Controller
         $data['page'] = 'Checkout';
         echo ($this->view('Home', $data));
     }
+    function doCheckOut()
+    {
+        session_destroy();
+        echo 'success';
+    }
 }

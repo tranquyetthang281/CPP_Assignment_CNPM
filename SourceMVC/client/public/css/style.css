@@ -215,6 +215,13 @@ header .cart {
     transform: translateY(-50%);
     cursor: pointer;
 }
+header .count-item {
+    font-size: 10px;
+    position: absolute;
+    right: -7px;
+    top: 0px;
+    border-radius: 50px;
+}
 
 /* header end */
 
@@ -606,6 +613,18 @@ header .cart {
     transform: translateY(-50%);
     left: 20px;
 }
+.message-add {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    width: 330px !important;
+    right: -330px;
+    top: 55px;
+    transition: linear;
+    opacity: 0;
+}
 
 /* cart end */
 /* search box */
@@ -836,6 +855,7 @@ ul {
     z-index: 10;
 }
 .ck-container .order-info {
+    color: black;
     height: 100%;
     width: 50%;
     padding-left: 25px;

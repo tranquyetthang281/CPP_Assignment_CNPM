@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="button" class="add-to-cart btn btn-danger id<?php echo $data['item']['id'] ?> ?>" id="hahaha">Add to card</button>
+                    <button type="button" class="add-to-cart btn btn-danger id<?php echo $data['item']['id'] ?>" id="hahaha">Add to card</button>
                 </div>
             </div>
         </div>

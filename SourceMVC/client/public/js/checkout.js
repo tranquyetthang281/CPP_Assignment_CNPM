@@ -1,5 +1,4 @@
-var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC/client";
-
+var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC";
 var cardDrop = document.getElementById("card-dropdown");
 var activeDropdown;
 cardDrop.addEventListener("click", function () {
@@ -12,12 +11,11 @@ cardDrop.addEventListener("click", function () {
 });
 
 window.onclick = function (e) {
-    console.log(e.target.tagName);
-    console.log("dropdown");
-    console.log(activeDropdown);
+    var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC";
+
     if (e.target.tagName === "LI" && activeDropdown) {
         if (e.target.innerHTML === "Zalo Pay") {
-            document.getElementById("credit-card-image").src = DOMAIN + "images/zalo.png";
+            document.getElementById("credit-card-image").src = DOMAIN + "/images/zalo.png";
             activeDropdown.classList.remove("visible");
             activeDropdown = null;
             e.target.innerHTML = document.getElementById("current-card").innerHTML;
@@ -27,7 +25,7 @@ window.onclick = function (e) {
             document.getElementById("frame-3").innerText = "Email";
             document.getElementById("frame-4").innerText = "Pin";
         } else if (e.target.innerHTML === "Momo") {
-            document.getElementById("credit-card-image").src = DOMAIN + "images/momo.jpg";
+            document.getElementById("credit-card-image").src = DOMAIN + "/images/momo.jpg";
             activeDropdown.classList.remove("visible");
             activeDropdown = null;
             e.target.innerHTML = document.getElementById("current-card").innerHTML;
@@ -37,7 +35,7 @@ window.onclick = function (e) {
             document.getElementById("frame-3").innerText = "Email";
             document.getElementById("frame-4").innerText = "Pin";
         } else if (e.target.innerHTML === "Visa") {
-            document.getElementById("credit-card-image").src = "./img/visa.png";
+            document.getElementById("credit-card-image").src = DOMAIN + "/images/visa.png";
             activeDropdown.classList.remove("visible");
             activeDropdown = null;
             e.target.innerHTML = document.getElementById("current-card").innerHTML;
@@ -52,3 +50,29 @@ window.onclick = function (e) {
         activeDropdown = null;
     }
 };
+$(".pay-btn").click(function () {
+    let flag = false;
+    $(".input-field").each(function () {
+        if (!$(this).val()) {
+            flag = true;
+        }
+    });
+    if (flag == true) {
+        $(".err").text("You must fill in all the boxes");
+        setTimeout(function () {
+            $(".err").text("");
+        }, 1500);
+    } else {
+        $.ajax({
+            url: DOMAIN + "/Checkout/doCheckOut",
+            success: function (result) {
+                console.log(result);
+                $(".succ").text("Success!");
+                setTimeout(function () {
+                    $(".succ").text("");
+                    window.location.href = DOMAIN + "/client";
+                }, 1000);
+            },
+        });
+    }
+});

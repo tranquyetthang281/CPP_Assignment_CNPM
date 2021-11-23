@@ -56,7 +56,7 @@ $total = 0;
                 </table>
                 <img src='<?php echo $DOMAIN ?>/images/visa.png' height='80' class='credit-card-image' id='credit-card-image'></img>
                 <span id='frame-1'>Card Number</span>
-                <input class='input-field form-control'></input>
+                <input class='input-field form-control get-input'></input>
                 <span id='frame-2'>Card Holder</span>
                 <input class='input-field form-control'></input>
                 <table class='half-input-table'>
@@ -69,9 +69,14 @@ $total = 0;
                         </td>
                     </tr>
                 </table>
-                <button class='pay-btn'>Checkout</button>
+                <button type="submit" class='pay-btn'>Checkout</button>
+                <div class="text-danger"><strong class="err"></strong></div>
+                <div class="text-success"><strong class="succ"></strong></div>
             </div>
         </div>
     </div>
 </div>
-<script language="javascript" src="<?php echo $DOMAIN ?>/client/public/js/checkout.js"></script>
+<script src="<?php echo $DOMAIN ?>/client/public/js/checkout.js"></script>
+<script>
+
+</script>
