@@ -26,9 +26,9 @@ $total = 0;
                                 </td>
                             </tr>
                         </table>
-                        <div class='line'></div>
                 <?php }
                 } ?>
+                <div class='line'></div>
 
             </div>
             <div class='total'>

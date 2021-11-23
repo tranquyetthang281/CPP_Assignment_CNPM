@@ -185,12 +185,12 @@ header .title h1 {
     margin: 0px;
     padding: 0px;
 }
-head .title a:hover{
+head .title a:hover {
     color: white;
 }
-head .title a{
-    text-decoration: none !important; 
-} 
+head .title a {
+    text-decoration: none !important;
+}
 header .search-bar {
     width: 400px;
     position: absolute;
@@ -531,6 +531,8 @@ header .cart {
     top: 10%;
     transition: 0.2s linear;
     left: 230px;
+    color: white;
+    text-decoration: none;
 }
 .remove-all {
     cursor: pointer;
