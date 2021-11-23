@@ -51,6 +51,8 @@ function totalPrice() {
 $(".total").text("Total: " + totalPrice() + "$");
 // handle buy now click
 $(".buy-now").click(function () {
+    //albert when click add to cart
+
     var item_id = $(this).attr("class").split(" ")[1].slice(4);
     console.log(item_id);
     $.ajax({
@@ -120,6 +122,7 @@ $(".search-item").keyup(function () {
 
 // handle add-to-cart click
 $(".add-to-cart").click(function () {
+    //albert when click add to cart
     var item_id = $(this).attr("class").split(" ")[3].slice(2);
     console.log(item_id);
     $.ajax({
@@ -134,3 +137,7 @@ $(".add-to-cart").click(function () {
         },
     });
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 55f91298228a9fe940d65701ea9000d235bcf43a

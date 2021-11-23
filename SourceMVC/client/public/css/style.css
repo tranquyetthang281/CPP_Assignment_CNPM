@@ -181,9 +181,16 @@ header .title {
     transform: translateY(-50%);
 }
 header .title h1 {
+    color: white;
     margin: 0px;
     padding: 0px;
 }
+head .title a:hover{
+    color: white;
+}
+head .title a{
+    text-decoration: none !important; 
+} 
 header .search-bar {
     width: 400px;
     position: absolute;

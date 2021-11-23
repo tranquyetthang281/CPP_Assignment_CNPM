@@ -11,7 +11,9 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-6"><img class="img-detail"src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt="  " /></div>
+                            <div class="col-md-6" style="display: flex; justify-content: center;">
+                                <img class="img-detail" style="width: 20em; position: static; transform: none;" src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt="  " />
+                            </div>
                             <div class="col-md-6">
                                 <div class="disc-detail">
                                     <p><?php echo $item['name'] ?></p>
@@ -27,7 +29,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
                                     <!-- <div class="col-md-9">
@@ -49,6 +50,6 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>

@@ -24,7 +24,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <!-- header start -->
     <header>
         <div class="title">
-            <h1>Restaurant POS</h1>
+            <a href="<?php echo $DOMAIN ?>" style="text-decoration: none;">
+                <h1>Restaurant POS</h1>
+            </a>
         </div>
         <div class="search-bar">
             <input type="text" class="form-control search-item" placeholder="Search..." />

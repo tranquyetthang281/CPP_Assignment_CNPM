@@ -1,7 +1,6 @@
 <?php $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client' ?>
-<button type="button" class="btn btn-info" style="margin-bottom: 40px;">
-    <a href="http://localhost/CPP_Assignment_CNPM/SourceMVC/client/" style="color: black; text-decoration: none">Back </a>
-</button>
+
+
 <!--Detail-->
 <h5 class="modal-title" id="title" style="font-size: 40px;"><?php echo $data['item']['name'] ?></h5>
 <div class="modal-body">
