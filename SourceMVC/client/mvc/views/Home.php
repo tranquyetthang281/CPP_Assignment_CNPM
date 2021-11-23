@@ -30,9 +30,12 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
             <input type="text" class="form-control search-item" placeholder="Search..." />
             <ion-icon class="icon-search" name="search-outline"></ion-icon>
         </div>
-        <div class="cart" data-bs-target="#my-cart" data-bs-toggle="offcanvas">
-            <ion-icon name="cart-outline"></ion-icon>
-        </div>
+        <?php if ($data['page'] != 'Checkout') { ?>
+            <div class="cart" data-bs-target="#my-cart" data-bs-toggle="offcanvas">
+                <ion-icon name="cart-outline"></ion-icon>
+            </div>
+        <?php } ?>
+
     </header>
 
     <!-- header  end -->
@@ -58,7 +61,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         </div>
         <div class="checkout">
             <div class="total">Total:</div>
-            <div class="checkout-button">Checkout</div>
+            <a href="<?php echo $DOMAIN ?>/Checkout/getContent" class="checkout-button">Checkout</a>
             <div class="remove-all" onclick="removeAll()">Remove all</div>
         </div>
     </div>
