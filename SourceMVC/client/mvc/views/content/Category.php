@@ -1,7 +1,5 @@
 <?php $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client' ?>
-<button type="button" class="btn btn-info">
-    <a href="http://localhost/CPP_Assignment_CNPM/SourceMVC/client/" style="color: black; text-decoration: none">Back </a>
-</button>
+
 <div class="menu mx-auto">
     <div class="category mx-auto" id="menu1">
         <div class="title">
