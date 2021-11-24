@@ -673,7 +673,7 @@ header .count-item {
 /* search-box end */
 
 /*Detail start*/
-.img-detail img {
+.img-detail {
     width: 500px;
     height: 400px;
 }
