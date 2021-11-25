@@ -38,9 +38,7 @@
                         <a class="text-danger" href="<?php echo $DOMAIN ?>/Order/deleteOrder/<?php echo $value['orderID'] ?>">
                             Delete
                         </a>
-                        <!-- <form action="" class="ms-2">
-                            <button class="btn btn-danger">Print</button>
-                        </form> -->
+
                     </td>
                 </tr>
 

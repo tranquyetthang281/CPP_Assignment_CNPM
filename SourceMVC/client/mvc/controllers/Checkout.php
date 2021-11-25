@@ -11,7 +11,10 @@ class Checkout extends Controller
         $tableNum = (int)$_POST['tableNumber'];
         $total = 0;
         foreach ($_SESSION as $key => $val) {
-            $total += (int)$val['total_price'];
+            if ($key == 'user_token') {
+                continue;
+            } else
+                $total += (int)$val['total_price'];
         }
         $order = $this->model("Order");
         $orderDate = date("Y-m-d h:i:s");

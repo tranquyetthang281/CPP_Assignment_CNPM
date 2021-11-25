@@ -1,5 +1,5 @@
 <?php $DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC";
-$items = $_SESSION;
+$items = $_SESSION['cart'];
 $total = 0;
 ?>
 <div class='ck-container'>

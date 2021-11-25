@@ -18,13 +18,16 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/admin';
 </head>
 
 <?php
+if (!is_admin()) {
+    header("Location: http://localhost/CPP_Assignment_CNPM/SourceMVC/client/");
+}
 ?>
 
 <body>
     <div class="header">
         <h1> <?php echo $data['render'] == 'order' ? 'Quản lý đơn hàng' : 'Quản lý sản phẩm' ?>
         </h1>
-
+        <a style="position:absolute; right: 50px; top:10px;" href="http://localhost/CPP_Assignment_CNPM/SourceMVC/client/Login/Logout">Logout</a>
     </div>
     <div class="container">
         <div class="row mt-3">
@@ -44,7 +47,10 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/admin';
                     <button class="add-item bg-secondary mt-2">Add new item</button>
                 </form>
                 <form action="<?php echo $DOMAIN ?>/Order/OrderPage">
-                    <button class="order-item add-item bg-secondary mt-2">Manage Order</button>
+                    <button class="order add-item bg-secondary mt-2">Manage Order</button>
+                </form>
+                <form action="<?php echo $DOMAIN ?>/Account/AccountPage">
+                    <button class="account-manage add-item bg-secondary mt-2">Manage Account</button>
                 </form>
 
             </div>

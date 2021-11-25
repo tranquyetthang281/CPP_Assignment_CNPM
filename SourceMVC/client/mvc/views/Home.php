@@ -32,6 +32,16 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
             <input type="text" class="form-control search-item" placeholder="Search..." />
             <ion-icon class="icon-search" name="search-outline"></ion-icon>
         </div>
+        <!-- <div>About us</div>
+        <div>Contact us</div> -->
+        <div class="user-action">
+            <?php if (isset($_SESSION['token_user'])) { ?>
+                <a href="<?php echo $DOMAIN ?>/Login/accountPage">Hello, <?php echo is_logged()['username'] ?></a>
+                <a class="ms-3" href="<?php echo $DOMAIN ?>/Login/Logout">Logout</a>
+            <?php } else { ?>
+                <a href="<?php echo $DOMAIN ?>/Login/loginPage">Login</a>
+            <?php } ?>
+        </div>
         <?php if ($data['page'] != 'Checkout') { ?>
             <div class="cart" data-bs-target="#my-cart" data-bs-toggle="offcanvas">
                 <ion-icon name="cart-outline"></ion-icon>
@@ -94,7 +104,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-      
+
     </script>
 </body>
 

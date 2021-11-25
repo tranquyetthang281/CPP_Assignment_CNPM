@@ -1,43 +1,7 @@
 //scroll
 var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC/client";
 $(".categories").hide();
-window.onload = function () {
-    window.addEventListener("scroll", function () {
-        if (window.scrollY >= 388) {
-            $(".categories").fadeIn();
-        } else {
-            $(".categories").fadeOut();
-        }
-    });
-    $(".scroll-menu").click(function () {
-        var id = $(this).index() + 1;
-        document.getElementById("menu" + id).scrollIntoView({ block: "center" });
-    });
-
-    // slide
-    var count = 0;
-    setInterval(function () {
-        count = count > 3 ? 0 : count;
-        doSlide(count);
-        setCheck();
-        count++;
-    }, 3000);
-    $(".bar").click(function () {
-        count = $(this).index();
-        doSlide(count);
-        setCheck();
-    });
-
-    function doSlide(index) {
-        var pixel = index * -695;
-        $(".slides").css("margin-left", pixel + "px");
-    }
-    function setCheck() {
-        var checked = document.getElementsByClassName("checked");
-        $(".checked")[0].className = $(".checked")[0].className.replace(" checked", "");
-        $(".bar")[count].className += " checked";
-    }
-};
+window.onload = function () {};
 
 // cart
 //animation for message add to cart
@@ -124,32 +88,6 @@ $(".search-item").keyup(function () {
     });
 });
 
-// //handle plus num detail
-// $('input.input-qty-detail').each(function() {
-//     var $this = $(this),
-//         qty = $this.parent().find('.is-form-detail'),
-//         min = Number($this.attr('min')),
-//         max = Number($this.attr('max'))
-//     if (min == 0) {
-//         var d = 0
-//     } else d = min
-//     $(qty).on('click', function() {
-//         if ($(this).hasClass('minus')) {
-//             if (d > min) {
-//                 d += -1;
-//                 document.getElementById("price-detail").innerText = Number(d) * 200 + ".000đ";
-//             }
-//         } else if ($(this).hasClass('plus')) {
-//             var x = Number($this.val()) + 1
-//             if (x <= max) {
-//                 d += 1;
-//                 document.getElementById("price-detail").innerText = Number(d) * 200 + ".000đ";
-//             }
-//         }
-//         $this.attr('value', d).val(d)
-//     })
-// })
-
 // handle add-to-cart click
 $(".add-to-cart").click(function () {
     var item_id = $(this).attr("class").split(" ")[3].slice(2);
@@ -164,6 +102,112 @@ $(".add-to-cart").click(function () {
             totalItem();
             $(".list-item-cart").html(result);
             $(".total").text("Total: " + totalPrice() + "$");
+        },
+    });
+});
+$(".login-button").click(function () {
+    if ($(".username-input").val() && $(".password-input").val()) {
+        $.ajax({
+            url: DOMAIN + "/Login/handleLogin",
+            type: "post",
+            data: {
+                username: $(".username-input").val(),
+                password: $(".password-input").val(),
+            },
+            success: function (result) {
+                if (result == "error") {
+                    $(".err").text("Mat khau bi sai");
+                    setTimeout(() => {
+                        $(".err").text("");
+                    }, 1500);
+                } else if (result == "banned") {
+                    $(".err").text("Tai khoan cua ban bi khoa vui long lien he quan tri vien");
+                    setTimeout(() => {
+                        $(".err").text("");
+                    }, 1500);
+                } else {
+                    if (result == "user") window.location.href = DOMAIN;
+                    else window.location.href = "http://localhost/CPP_Assignment_CNPM/SourceMVC/admin";
+                }
+            },
+        });
+    }
+});
+$(".register-button").click(function () {
+    if ($(".username-input").val() && $(".password-input").val() && $(".repassword-input").val() && $(".name-input").val()) {
+        if ($(".password-input").val() != $(".repassword-input").val()) {
+            $(".err").text("Mat khau khong dung");
+            setTimeout(() => {
+                $(".err").text("");
+            }, 1000);
+        } else {
+            $.ajax({
+                url: DOMAIN + "/Register/handleRegister",
+                data: {
+                    username: $(".username-input").val(),
+                    password: $(".password-input").val(),
+                    fullName: $(".name-input").val(),
+                },
+                type: "post",
+                success: function (result) {
+                    if (result != "valid") {
+                        $(".err").text(result);
+                        setTimeout(() => {
+                            $(".err").text("");
+                        }, 1000);
+                    } else {
+                        $(".succ").text("Success");
+                        setTimeout(() => {
+                            window.location.href = DOMAIN + "/Login/loginPage";
+                        }, 1000);
+                    }
+                },
+            });
+        }
+    }
+});
+$(".changePass-button").click(function () {
+    if ($(".old-pass").val() && $(".new-pass").val() && $(".renew-pass").val()) {
+        if ($(".new-pass").val() != $(".renew-pass").val()) {
+            $(".err").text("Mat khau moi bi sai");
+            setTimeout(() => {
+                $(".err").text("");
+            }, 1000);
+        } else {
+            $.ajax({
+                url: DOMAIN + "/Login/changePass",
+                type: "post",
+                data: {
+                    oldPass: $(".old-pass").val(),
+                    newPass: $(".new-pass").val(),
+                },
+                success: function (result) {
+                    if (result != "valid") {
+                        $(".err").text(result);
+                        setTimeout(() => {
+                            $(".err").text("");
+                        }, 1000);
+                    } else $(".succ").text("Success");
+                    setTimeout(() => {
+                        window.location.href = DOMAIN + "/Login/accountPage";
+                    }, 1000);
+                },
+            });
+        }
+    }
+});
+$(".profile-button").click(function () {
+    $.ajax({
+        url: DOMAIN + "/Login/changeProfile",
+        data: {
+            name: $(".name-input").val(),
+            phoneNum: $(".phone-input").val(),
+            email: $(".email-input").val(),
+            address: $(".address-input").val(),
+        },
+        type: "post",
+        success: function () {
+            window.location.href = DOMAIN + "/Login/accountPage";
         },
     });
 });

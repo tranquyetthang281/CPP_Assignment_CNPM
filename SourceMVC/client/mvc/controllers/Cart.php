@@ -46,15 +46,24 @@ class Cart extends Controller
     }
     function RemoveAll()
     {
-        $item = $this->model("ItemModel");
-        session_destroy();
+        if ($_SESSION) {
+            foreach ($_SESSION as $key => $val) {
+                if ($key == 'token_user') {
+                    continue;
+                } else
+                    ss_delete($key);
+            }
+        }
     }
     function getCount()
     {
         $result = 0;
         if ($_SESSION) {
             foreach ($_SESSION as $key => $val) {
-                $result += (int)$val['val'];
+                if ($key == 'token_user') {
+                    continue;
+                } else
+                    $result += (int)$val['val'];
             }
         }
         echo $result;

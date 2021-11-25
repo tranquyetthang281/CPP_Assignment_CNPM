@@ -5,7 +5,7 @@ $(document).ready(function () {
         var input_image = $(this).val();
         input_image = input_image.substr(12, 999);
         $(".image-upload").css({
-            "background-image": "url('http://localhost/CPP_Assignment_CNPM/SourceMVC//images/" + input_image + "')",
+            "background-image": "url('http://localhost/CPP_Assignment_CNPM/SourceMVC/images/" + input_image + "')",
         });
     });
     //ajax add new item

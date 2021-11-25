@@ -1,3 +1,5 @@
+<?php $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client' ?>
+
 <div class="banner">
     <!-- slide -->
     <div class="banner-slide">
@@ -55,3 +57,6 @@
     <?php }
     ?>
 </div>
+<script src="<?php echo $DOMAIN ?>/public/js/home.js">
+
+</script>

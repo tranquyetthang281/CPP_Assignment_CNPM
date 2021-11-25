@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2021 lúc 05:40 AM
+-- Thời gian đã tạo: Th10 25, 2021 lúc 04:21 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -24,6 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `account`
+--
+
+CREATE TABLE `account` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `phoneNumber` varchar(255) DEFAULT '',
+  `email` varchar(255) DEFAULT '',
+  `address` varchar(1024) DEFAULT '',
+  `state` int(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `account`
+--
+
+INSERT INTO `account` (`id`, `username`, `password`, `level`, `name`, `phoneNumber`, `email`, `address`, `state`) VALUES
+(1, 'minhtoan', '1915564', 2, 'Trần Minh', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1),
+(2, 'toanem', '1234', 2, 'Minh Toàn', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1),
+(3, 'admin', 'admin', 1, 'Admin', '', '', '', 1),
+(4, 'user1', 'user1', 2, 'User1', '', '', '', 1),
+(5, 'minhtoan149', 'minhtoan149', 2, 'toan', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `auto_ma_dat_phong`
 --
 
@@ -40,7 +69,8 @@ INSERT INTO `auto_ma_dat_phong` (`id`) VALUES
 (2),
 (3),
 (4),
-(5);
+(5),
+(6);
 
 -- --------------------------------------------------------
 
@@ -113,6 +143,64 @@ INSERT INTO `item` (`id`, `category_id`, `name`, `price`, `description`, `calori
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `item_in_cart`
+--
+
+CREATE TABLE `item_in_cart` (
+  `id` int(11) NOT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `total_price` int(11) DEFAULT NULL,
+  `val` int(11) DEFAULT NULL,
+  `username` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `item_in_cart`
+--
+
+INSERT INTO `item_in_cart` (`id`, `item_id`, `name`, `image`, `total_price`, `val`, `username`) VALUES
+(25, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(26, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(27, 5, 'Iced Tea', 'burger.png', 492, 4, 'toanem'),
+(28, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(29, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(30, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(31, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(32, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(33, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(34, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(35, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(36, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(37, 5, 'Iced Tea', 'burger.png', 246, 2, 'user1'),
+(38, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'user1'),
+(39, 71, 'Nothing', 'burger.png', 123, 1, 'user1'),
+(40, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'user1'),
+(41, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(42, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(43, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(44, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(45, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(46, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(47, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(48, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(49, 2, 'Chocolate Shake', 'burger.png', 369, 3, 'minhtoan149'),
+(50, 3, 'Vanilla Shake', 'burger.png', 492, 4, 'minhtoan149'),
+(51, 5, 'Iced Tea', 'burger.png', 246, 2, 'minhtoan149'),
+(52, 71, 'Nothing', 'burger.png', 246, 2, 'minhtoan149'),
+(53, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(54, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(55, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(56, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(57, 2, 'Chocolate Shake', 'burger.png', 492, 4, 'minhtoan149'),
+(58, 3, 'Vanilla Shake', 'burger.png', 492, 4, 'minhtoan149'),
+(59, 5, 'Iced Tea', 'burger.png', 246, 2, 'minhtoan149'),
+(60, 71, 'Nothing', 'burger.png', 246, 2, 'minhtoan149');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `order`
 --
 
@@ -129,7 +217,8 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`orderID`, `orderDate`, `tableNumber`, `totalPrice`, `stateID`) VALUES
-('DH25112021000005', '2021-11-25 05:40:34', 12, 984, 1);
+('DH25112021000005', '2021-11-25 05:40:34', 12, 984, 1),
+('DH25112021000006', '2021-11-25 09:28:25', 123, 492, 2);
 
 --
 -- Bẫy `order`
@@ -161,13 +250,20 @@ CREATE TABLE `state` (
 --
 
 INSERT INTO `state` (`stateID`, `stateName`) VALUES
-(1, 'Đặt hàng'),
-(2, 'Đã thanh toán'),
+(1, 'Chờ xác nhận'),
+(2, 'Đã xác nhận'),
 (3, 'Hủy');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Chỉ mục cho bảng `auto_ma_dat_phong`
@@ -189,6 +285,13 @@ ALTER TABLE `item`
   ADD KEY `fk_item` (`category_id`);
 
 --
+-- Chỉ mục cho bảng `item_in_cart`
+--
+ALTER TABLE `item_in_cart`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk1_item_cart` (`item_id`);
+
+--
 -- Chỉ mục cho bảng `order`
 --
 ALTER TABLE `order`
@@ -206,10 +309,16 @@ ALTER TABLE `state`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT cho bảng `auto_ma_dat_phong`
 --
 ALTER TABLE `auto_ma_dat_phong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -224,6 +333,12 @@ ALTER TABLE `item`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
+-- AUTO_INCREMENT cho bảng `item_in_cart`
+--
+ALTER TABLE `item_in_cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
 -- Các ràng buộc cho các bảng đã đổ
 --
 
@@ -232,6 +347,12 @@ ALTER TABLE `item`
 --
 ALTER TABLE `item`
   ADD CONSTRAINT `fk_item` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
+
+--
+-- Các ràng buộc cho bảng `item_in_cart`
+--
+ALTER TABLE `item_in_cart`
+  ADD CONSTRAINT `fk1_item_cart` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`);
 
 --
 -- Các ràng buộc cho bảng `order`
