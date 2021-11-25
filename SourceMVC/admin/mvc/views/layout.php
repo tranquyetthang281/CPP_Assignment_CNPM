@@ -22,7 +22,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/admin';
 
 <body>
     <div class="header">
-        <h1>Quản lý sản phẩm</h1>
+        <h1> <?php echo $data['render'] == 'order' ? 'Quản lý đơn hàng' : 'Quản lý sản phẩm' ?>
+        </h1>
+
     </div>
     <div class="container">
         <div class="row mt-3">
@@ -40,6 +42,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/admin';
                 </div>
                 <form action="<?php echo $DOMAIN ?>/Add/AddPage">
                     <button class="add-item bg-secondary mt-2">Add new item</button>
+                </form>
+                <form action="<?php echo $DOMAIN ?>/Order/OrderPage">
+                    <button class="order-item add-item bg-secondary mt-2">Manage Order</button>
                 </form>
 
             </div>

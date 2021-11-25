@@ -195,3 +195,20 @@ ion-icon {
     align-items: center;
     justify-content: center;
 }
+
+/* order */
+.manage-order .search-bar {
+    width: auto;
+    position: relative;
+    margin-top: 10px;
+}
+.manage-order .search-title {
+    font-size: 20px;
+    line-height: 45px;
+    font-weight: 700;
+    background-color: turquoise;
+    padding-left: 10px;
+}
+.manage-order .list-order {
+    width: 100%;
+}

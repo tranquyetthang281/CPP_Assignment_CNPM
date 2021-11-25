@@ -55,6 +55,8 @@ $total = 0;
                     </tr>
                 </table>
                 <img src='<?php echo $DOMAIN ?>/images/visa.png' height='80' class='credit-card-image' id='credit-card-image'></img>
+                <span id='frame-0'>Your Table Number</span>
+                <input class='input-field form-control get-input'></input>
                 <span id='frame-1'>Card Number</span>
                 <input class='input-field form-control get-input'></input>
                 <span id='frame-2'>Card Holder</span>

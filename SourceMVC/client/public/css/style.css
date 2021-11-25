@@ -843,7 +843,7 @@ ul {
     width: 50%;
 }
 .ck-container .window {
-    height: 540px;
+    height: 570px;
     width: 800px;
     background: #fff;
     display: -webkit-box;
@@ -918,7 +918,7 @@ ul {
     color: #fff;
     cursor: pointer;
     position: absolute;
-    bottom: 25px;
+    bottom: 10px;
     width: calc(100% - 50px);
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
