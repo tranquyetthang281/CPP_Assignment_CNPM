@@ -3,12 +3,24 @@ class OrderModel extends Database
 {
     function get_all_order()
     {
-        $sql = "SELECT * FROM `order`";
+        $sql = "SELECT `order`.`orderID`, `order`.`orderDate`,`order`.`tableNumber`,`order`.`totalPrice`,state.stateName FROM `order` INNER JOIN state where `order`.`stateID` = state.stateID order BY `stateName`DESC";
         return $this->get_list($sql);
     }
-    function update_state($orderId, $state)
+    function update_state($orderID)
     {
-        $state = (int)$state;
-        $sql = "UPDATE FROM order SET state = '$state' where orderID = $orderId";
+
+        $state = (int) $this->get_order($orderID)['stateID'];
+        if ($state == 2) {
+            $state = 1;
+        } else {
+            $state += 1;
+        }
+        $sql = "UPDATE `order` SET stateID = '$state' where orderID = '$orderID'";
+        $this->query($sql);
+    }
+    function get_order($orderID)
+    {
+        $sql = "SELECT * FROM `order` WHERE orderID = '$orderID' ";
+        return $this->get_one($sql);
     }
 }

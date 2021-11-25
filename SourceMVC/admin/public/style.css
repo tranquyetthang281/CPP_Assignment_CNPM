@@ -198,8 +198,6 @@ ion-icon {
 
 /* order */
 .manage-order .search-bar {
-    width: auto;
-    position: relative;
     margin-top: 10px;
 }
 .manage-order .search-title {
@@ -211,4 +209,7 @@ ion-icon {
 }
 .manage-order .list-order {
     width: 100%;
+}
+.stateName {
+    cursor: pointer;
 }
