@@ -40,6 +40,35 @@ window.onload = function () {
 };
 
 // cart
+//animation for message add to cart
+function animationMessageCart() {
+    if (!$(".message-add").is(":animated")) {
+        $(".message-add").animate({
+            right: "10px",
+            opacity: "1",
+        });
+        setTimeout(function () {
+            $(".message-add").animate({
+                opacity: "0",
+                right: "-330px",
+            });
+        }, 1000);
+    }
+}
+//update count-item of cart icon
+function totalItem() {
+    $.ajax({
+        url: DOMAIN + "/Cart/getCount",
+        success: function (result) {
+            if (result != 0) {
+                $(".count-item").text(result);
+            } else {
+                $(".count-item").text("");
+            }
+        },
+    });
+}
+totalItem();
 //update total price
 function totalPrice() {
     var total = 0;
@@ -51,8 +80,9 @@ function totalPrice() {
 $(".total").text("Total: " + totalPrice() + "$");
 // handle buy now click
 $(".buy-now").click(function () {
+    //albert when click add to cart
+
     var item_id = $(this).attr("class").split(" ")[1].slice(4);
-    console.log(item_id);
     $.ajax({
         url: DOMAIN + "/Cart/AddItem",
         method: "post",
@@ -60,7 +90,9 @@ $(".buy-now").click(function () {
             item_id: item_id,
         },
         success: function (result) {
+            animationMessageCart();
             $(".list-item-cart").html(result);
+            totalItem();
             $(".total").text("Total: " + totalPrice() + "$");
         },
     });
@@ -121,7 +153,6 @@ $(".search-item").keyup(function () {
 // handle add-to-cart click
 $(".add-to-cart").click(function () {
     var item_id = $(this).attr("class").split(" ")[3].slice(2);
-    console.log(item_id);
     $.ajax({
         url: DOMAIN + "/Cart/AddItem",
         method: "post",
@@ -129,6 +160,8 @@ $(".add-to-cart").click(function () {
             item_id: item_id,
         },
         success: function (result) {
+            animationMessageCart;
+            totalItem();
             $(".list-item-cart").html(result);
             $(".total").text("Total: " + totalPrice() + "$");
         },

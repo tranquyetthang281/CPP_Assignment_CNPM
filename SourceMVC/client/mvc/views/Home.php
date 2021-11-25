@@ -24,14 +24,22 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <!-- header start -->
     <header>
         <div class="title">
-            <h1>Restaurant POS</h1>
+            <a href="<?php echo $DOMAIN ?>" style="text-decoration: none;">
+                <h1>Restaurant POS</h1>
+            </a>
         </div>
         <div class="search-bar">
             <input type="text" class="form-control search-item" placeholder="Search..." />
             <ion-icon class="icon-search" name="search-outline"></ion-icon>
         </div>
-        <div class="cart" data-bs-target="#my-cart" data-bs-toggle="offcanvas">
-            <ion-icon name="cart-outline"></ion-icon>
+        <?php if ($data['page'] != 'Checkout') { ?>
+            <div class="cart" data-bs-target="#my-cart" data-bs-toggle="offcanvas">
+                <ion-icon name="cart-outline"></ion-icon>
+                <span class="badge bg-danger count-item"></span>
+            </div>
+        <?php } ?>
+        <div class="alert alert-success w-25 message-add">
+            <strong>Item has been added to your cart!</strong>
         </div>
     </header>
 
@@ -58,7 +66,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         </div>
         <div class="checkout">
             <div class="total">Total:</div>
-            <div class="checkout-button">Checkout</div>
+            <a href="<?php echo $DOMAIN ?>/Checkout/getContent" class="checkout-button">Checkout</a>
             <div class="remove-all" onclick="removeAll()">Remove all</div>
         </div>
     </div>
@@ -85,6 +93,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <script src="<?php echo $DOMAIN ?>/public/js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      
+    </script>
 </body>
 
 </html>

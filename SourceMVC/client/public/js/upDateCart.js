@@ -23,6 +23,7 @@ $(".quantity-change").click(function () {
                 .children(".price-item-cart")
                 .text(result + "$");
             $(".total").text("Total: " + totalPrice() + "$");
+            totalItem();
         },
     });
 });
@@ -38,6 +39,7 @@ $(".remove-item").click(function () {
             success: function (result) {
                 $(".list-item-cart").html(result);
                 $(".total").text("Total: " + totalPrice() + "$");
+                totalItem();
             },
         });
     }
@@ -50,6 +52,7 @@ function removeAll() {
             success: function () {
                 $(".list-item-cart").html("");
                 $(".total").text("Total: " + totalPrice() + "$");
+                totalItem();
             },
         });
     }
