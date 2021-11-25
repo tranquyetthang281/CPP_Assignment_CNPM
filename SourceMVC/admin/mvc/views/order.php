@@ -3,9 +3,9 @@
     <div class="search-bar col-lg-6">
         <input type="text" class="mt-3 form-control w-50 search-item" placeholder="Tìm kiếm theo mã đơn hàng..." />
     </div>
-    <form action="" class="mt-3">
-        <button class="btn btn-danger">Delete all</button>
-    </form>
+    <a class="text-danger" href="<?php echo $DOMAIN ?>/Order/removeAll">
+        Delete All
+    </a>
 </div>
 <table class="table table-striped mt-4">
     <thead>
@@ -35,12 +35,12 @@
                         </a>
                     </td>
                     <td style="display:flex">
-                        <form action="" class="ms-2">
-                            <button class="btn btn-danger">Delete</button>
-                        </form>
-                        <form action="" class="ms-2">
+                        <a class="text-danger" href="<?php echo $DOMAIN ?>/Order/deleteOrder/<?php echo $value['orderID'] ?>">
+                            Delete
+                        </a>
+                        <!-- <form action="" class="ms-2">
                             <button class="btn btn-danger">Print</button>
-                        </form>
+                        </form> -->
                     </td>
                 </tr>
 

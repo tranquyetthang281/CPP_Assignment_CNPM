@@ -23,8 +23,18 @@ class Order extends Controller
     {
         $orderModel = $this->model('OrderModel');
         $orderModel->update_state($orderID);
-        $orders = $orderModel->get_all_order();
-        $this->data['orderList'] = $orders;
-        $this->view('layout', $this->data);
+        header("Location: http://localhost/CPP_Assignment_CNPM/SourceMVC/admin/Order/OrderPage");
+    }
+    function deleteOrder($orderID)
+    {
+        $orderModel = $this->model('OrderModel');
+        $orderModel->remove_order($orderID);
+        header("Location: http://localhost/CPP_Assignment_CNPM/SourceMVC/admin/Order/OrderPage");
+    }
+    function removeAll()
+    {
+        $orderModel = $this->model('OrderModel');
+        $orderModel->remove_all();
+        header("Location: http://localhost/CPP_Assignment_CNPM/SourceMVC/admin/Order/OrderPage");
     }
 }

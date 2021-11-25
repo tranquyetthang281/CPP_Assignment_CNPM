@@ -65,6 +65,10 @@ $(".pay-btn").click(function () {
     } else {
         $.ajax({
             url: DOMAIN + "/Checkout/doCheckOut",
+            type: "post",
+            data: {
+                tableNumber: $("#tableNum").val(),
+            },
             success: function (result) {
                 console.log(result);
                 $(".succ").text("Success!");

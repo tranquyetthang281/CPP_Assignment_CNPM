@@ -10,7 +10,7 @@ class OrderModel extends Database
     {
 
         $state = (int) $this->get_order($orderID)['stateID'];
-        if ($state == 2) {
+        if ($state == 3) {
             $state = 1;
         } else {
             $state += 1;
@@ -22,5 +22,15 @@ class OrderModel extends Database
     {
         $sql = "SELECT * FROM `order` WHERE orderID = '$orderID' ";
         return $this->get_one($sql);
+    }
+    function remove_order($orderID)
+    {
+        $sql = "DELETE FROM `order` WHERE orderID = '$orderID'";
+        $this->query($sql);
+    }
+    function remove_all()
+    {
+        $sql = "DELETE FROM `order`";
+        $this->query($sql);
     }
 }
