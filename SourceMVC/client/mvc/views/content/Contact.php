@@ -17,7 +17,7 @@
         <!-- Name -->
         <div class="mb-3">
           <label class="form-label" for="name">Name</label>
-          <input class="form-control" id="name-contact" type="text" placeholder="Name" required />
+          <input class="form-control" id="name-contact input-effect" type="text" placeholder="Name" required />
         </div>
         <!-- Email address-->
         <div class="mb-3">

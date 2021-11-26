@@ -3,9 +3,11 @@ body {
     color: white;
     position: relative;
     background-color: #1d1d1d;
+    height: 100%;
 }
 body::-webkit-scrollbar {
     width: 0px !important;
+    height: 0px !important;
 }
 
 .content {
@@ -95,7 +97,6 @@ body::-webkit-scrollbar {
     margin-left: 150px;
 }
 /* search-box end */
-
 
 /* checkout end */
 

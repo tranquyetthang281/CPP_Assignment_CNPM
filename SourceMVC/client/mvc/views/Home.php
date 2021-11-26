@@ -23,14 +23,17 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/cart.css" />
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/detail.css" />
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/checkout.css" />
-    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/style.css" />
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/profile.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/style.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/loginRegister.css" />
 
     <title>Document</title>
 </head>
 
 <body>
     <!-- header start -->
+
+
     <header>
         <div class="title">
             <a href="<?php echo $DOMAIN ?>" style="text-decoration: none;">
@@ -168,7 +171,6 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         </div>
     </div>
     <!-- footer end -->
-
     <script>
 
     </script>
