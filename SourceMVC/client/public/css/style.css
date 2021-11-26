@@ -77,19 +77,12 @@ body::-webkit-scrollbar {
     top: 35px;
 }
 .lg-icon {
-    margin-top: -40px;
+    margin-top: -35px;
     text-decoration: none;
     font-size: 40px;
 }
-<<<<<<< HEAD
-.icon-profile{
-    font-size: 30px;
-=======
 .icon-profile {
-    margin-top: -40px;
-    text-decoration: none;
     font-size: 40px;
->>>>>>> 962229e5764ef054ed13d88f99010a2f77724e7d
 }
 .rgt-bt a {
     color: white;
@@ -121,7 +114,6 @@ ul#ac-us1 a{
 }
 /* search-box end */
 
-<<<<<<< HEAD
 /*Detail start*/
 .img-detail {
     width: 500px;
@@ -531,12 +523,6 @@ ul {
 }
 
 /* End about*/
-
-
-
-=======
->>>>>>> 962229e5764ef054ed13d88f99010a2f77724e7d
-/* checkout end */
 
 .contact {
     position: absolute;

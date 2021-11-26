@@ -53,7 +53,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         
         <div class="user-action">
             <?php if (isset($_SESSION['token_user'])) { ?>
-                <div class="dropdown" style="margin-top: -30px">
+                <div class="dropdown" style="margin-top: -25px">
                     <i class="fa fa-user text-warning icon-profile" data-bs-toggle="dropdown" aria-hidden="true" ></i>
                     <ul class="dropdown-menu drop-menu-end">
                         <li><a class="dropdown-item" href="<?php echo $DOMAIN ?>/Login/accountPage">Edit Profile</a></li>
@@ -162,13 +162,9 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
                                 <h3 class="footer-block-title">Thưởng thức theo cách của bạn</h3>
                                 <ul>
                                     <li><a href="<?php echo $DOMAIN ?>" style="text-decoration: none;">
-<<<<<<< HEAD
-                                            <img src="http://localhost/Project/LapTrinhWeb/assignment/SourceMVC/images/logo.png" height="150px" style="margin-left: 100px;"></a></li>
 
-                                   
-=======
                                             <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/logo.png" height="150px" style="margin-left: 100px;"></a></li>
->>>>>>> 962229e5764ef054ed13d88f99010a2f77724e7d
+
                                 </ul>
                             </div>
                         </div>
