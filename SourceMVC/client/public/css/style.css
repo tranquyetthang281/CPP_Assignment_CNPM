@@ -116,8 +116,9 @@ ul#ac-us1 a{
 
 /*Detail start*/
 .img-detail {
-    width: 500px;
-    height: 400px;
+    max-width:300px;
+    width: auto;
+    height: auto;
 }
 .fade {
     font-family: block-pro, "Helvetica Neue", Verdana, Arial, sans-serif;
