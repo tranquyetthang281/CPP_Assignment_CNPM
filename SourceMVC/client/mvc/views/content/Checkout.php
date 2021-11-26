@@ -1,5 +1,5 @@
 <?php $DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC";
-$items = $_SESSION['cart'];
+$items = $_SESSION;
 $total = 0;
 ?>
 <div class='ck-container'>
@@ -8,25 +8,29 @@ $total = 0;
             <div class='order-info-content'>
                 <h2>Order Summary</h2>
                 <?php if ($items) {
-                    foreach ($items as $key => $value) { ?>
-                        <div class='line'></div>
-                        <table class='order-table'>
-                            <tr>
-                                <td><img src='<?php echo $DOMAIN ?>/images/<?php echo $value['image'] ?>' class='full-width'></img>
-                                </td>
-                                <td>
-                                    <br> <span class='thin'> <?php echo ($key)  ?></span>
-                                    <br> Số lượng: <?php echo $value['val'] ?>
-                                    <br>
-                                    <span> Đơn giá: <?php $total += (int)$value['total_price'];
-                                                    echo $value['total_price'] ?>$
+                    foreach ($items as $key => $value) {
+                        if ($key == 'token_user') {
+                            continue;
+                        } else { ?>
+                            <div class='line'></div>
+                            <table class='order-table'>
+                                <tr>
+                                    <td><img src='<?php echo $DOMAIN ?>/images/<?php echo $value['image'] ?>' class='full-width'></img>
+                                    </td>
+                                    <td>
+                                        <br> <span class='thin'> <?php echo ($key)  ?></span>
+                                        <br> Số lượng: <?php echo $value['val'] ?>
                                         <br>
-                                        <br>
-                                    </span>
-                                </td>
-                            </tr>
-                        </table>
+                                        <span> Đơn giá: <?php $total += (int)$value['total_price'];
+                                                        echo $value['total_price'] ?>$
+                                            <br>
+                                            <br>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
                 <?php }
+                    }
                 } ?>
                 <div class='line'></div>
 

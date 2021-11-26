@@ -16,6 +16,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/style.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/profile.css" />
 
     <title>Document</title>
 </head>
@@ -36,10 +37,20 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         <div>Contact us</div> -->
         <div class="user-action">
             <?php if (isset($_SESSION['token_user'])) { ?>
-                <a href="<?php echo $DOMAIN ?>/Login/accountPage">Hello, <?php echo is_logged()['username'] ?></a>
-                <a class="ms-3" href="<?php echo $DOMAIN ?>/Login/Logout">Logout</a>
+
+                <div class="dropdown">
+
+                    <ion-icon name="person-circle-outline" class="icon-profile" data-bs-toggle="dropdown"></ion-icon>
+                    <ul class="dropdown-menu drop-menu-end">
+                        <li><a class="dropdown-item" href="<?php echo $DOMAIN ?>/Login/accountPage">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $DOMAIN ?>/Order/historyPage">Payment History</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $DOMAIN ?>/Login/Logout">Logout</a></li>
+                    </ul>
+                </div>
             <?php } else { ?>
-                <a href="<?php echo $DOMAIN ?>/Login/loginPage">Login</a>
+                <a href="<?php echo $DOMAIN ?>/Login/loginPage">
+                    Login
+                </a>
             <?php } ?>
         </div>
         <?php if ($data['page'] != 'Checkout') { ?>

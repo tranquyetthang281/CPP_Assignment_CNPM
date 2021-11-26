@@ -112,9 +112,7 @@ class Login extends Controller
                     ss_delete($key);
                 }
             }
-            if ($data) {
-                $item->set_item_cart($userInfo['username'], $data);
-            }
+            $item->set_item_cart($userInfo['username'], $data);
         } else echo 'ERROR';
     }
 }

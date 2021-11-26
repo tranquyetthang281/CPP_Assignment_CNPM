@@ -64,7 +64,7 @@ $(".pay-btn").click(function () {
         }, 1500);
     } else {
         $.ajax({
-            url: DOMAIN + "/Checkout/doCheckOut",
+            url: DOMAIN + "/Checkout/doCheckout",
             type: "post",
             data: {
                 tableNumber: $("#tableNum").val(),
