@@ -780,9 +780,7 @@ header .count-item {
     font-size: 40px;
 }
 .icon-profile{
-    margin-top: -40px;
-    text-decoration: none;  
-    font-size: 40px;
+    font-size: 30px;
 }
 .rgt-bt a{
     color: white;
@@ -793,6 +791,24 @@ header .count-item {
 }
 .rgt-bt{
     margin-left: 150px;
+}
+#ac-us{
+    display: flex;
+    justify-content: right;
+}
+ul#ac-us1{
+    display: flex;
+    color: rgb(179, 44, 44);
+    list-style: none;
+    margin-right: 200px;
+}
+ul#ac-us1 li{
+    padding: 0px 20px;
+}
+ul#ac-us1 a{
+    text-decoration: none;
+    display: block;
+    color: darkorange;
 }
 /* search-box end */
 
@@ -1170,6 +1186,43 @@ ul {
         border-radius: 0px;
     }
 }
+/*About us*/
+.subheading{
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 22px;
+	color: #fc983c;	
+	padding-left: 50px;
+}
+.mb-4{
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 60px;
+	color: rgba(255, 255, 255, 0.8);
+	padding-left: 50px;
+}
+.pl-md-5 p{
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 29px;
+	color: #949494;
+	padding-left: 50px;
+}
+.img-left{
+	background-size: 100% 100%;
+}
+.chooseacar{
+	margin-top: 100px;
+}
+.chooseacar .container{
+	margin-left: 200px;
+	margin-right: 200px;
+	height: 666px;
+}
+
+/* End about*/
+
+
 
 /* checkout end */
 <<<<<<< HEAD
