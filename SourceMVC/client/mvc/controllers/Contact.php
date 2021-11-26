@@ -6,4 +6,9 @@ class Contact extends Controller
         $data['page'] = 'Contact';
         return ($this->view("Home", $data));
     }
+    function Thank()
+    {
+        $data['page'] = "Thankyou";
+        return $this->view("Home", $data);
+    }
 }

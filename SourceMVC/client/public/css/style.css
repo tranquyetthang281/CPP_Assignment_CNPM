@@ -208,10 +208,10 @@ header .icon-search {
 }
 header .cart {
     position: absolute;
-    right: 5%;
+    right: 100px;
     font-size: 40px;
     color: #ffa500;
-    top: 50%;
+    top: 36px;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -673,7 +673,8 @@ header .count-item {
 .user-action {
     display: flex;
     position: absolute;
-    right: 150px;
+    right: 20px;
+    top: 10px;
 }
 /* search-box end */
 
@@ -1053,123 +1054,9 @@ ul {
 }
 
 /* checkout end */
-<<<<<<< HEAD
-=======
-/* account info */
 
-.Acount-detail div.container.rounded {
-    width: 70%;
-    margin: 0 auto;
-}
-
-.Acount-detail img.rounded-circle.mt-5 {
-    width: 180px;
-    height: auto;
-}
-.Acount-detail .form-control:focus {
-    box-shadow: none;
-    border-color: #ba68c8;
-}
-
-.Acount-detail .profile-button {
-    background: rgb(99, 39, 120);
-    box-shadow: none;
-    border: none;
-}
-
-.Acount-detail .profile-button:hover {
-    background: #682773;
-}
-
-.Acount-detail .profile-button:focus {
-    background: #682773;
-    box-shadow: none;
-}
-
-.Acount-detail .profile-button:active {
-    background: #682773;
-    box-shadow: none;
-}
-
-.Acount-detail .labels {
-    font-size: 11px;
-}
-
-.Acount-detail button.btn.profile-button {
-    background-color: #434e6e;
-    color: #ffffff;
-}
-.Acount-detail .password-text {
-    cursor: pointer;
-    width: 100px;
-}
-
-/* modal  */
-.Acount-detail .modal {
-    cursor: default;
-}
-
-.Acount-detail .modal-content {
-    margin-top: 150px;
-}
-.Acount-detail .modal-footer {
-    justify-content: center;
-}
-.Acount-detail .submit-form {
-    position: relative;
-}
-.Acount-detail .submit-form input {
-    width: 100px;
+.contact {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(300px);
 }
-.Acount-detail .modal-body label:not(:first-child) {
-    margin-top: 10px;
-}
-/* end account info */
-
-
-/*contact form*/
-/* CSS */
-.contact-form{
-    width: 60%; 
-    margin: auto;
-}
-.contact-form h1{
-    color: rgb(246, 124, 1);
-}
-.send-message {
-    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-    border: 0;
-    border-radius: 12px;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 2.5;
-    outline: transparent;
-    padding: 0 1rem;
-    text-align: center;
-    text-decoration: none;
-    transition: box-shadow .2s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    display: table;
-    margin: auto;
-    margin-bottom: 80px;
-  }
-  
-  .send-message:not([disabled]):focus {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-  }
-  
-  .send-message:not([disabled]):hover {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-  }
-/*end contact form*/
->>>>>>> a5a18d17f1e352d9ec13e2587093847f94a872e3

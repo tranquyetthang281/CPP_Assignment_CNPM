@@ -110,6 +110,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
         </div>
     </footer>
     <!-- footer end -->
+
     <script>
 
     </script>

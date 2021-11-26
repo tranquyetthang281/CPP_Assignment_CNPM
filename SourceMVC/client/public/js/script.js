@@ -211,7 +211,3 @@ $(".profile-button").click(function () {
         },
     });
 });
-
-$(".send-message").click(function() {
-    animationMessageCart();
-});

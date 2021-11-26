@@ -1,35 +1,41 @@
 <!-- Wrapper container -->
 <div class="contact-form">
 
-    <h1>Contact us!</h1>
+  <h1>Contact us!</h1>
 
   <!-- Bootstrap 5 starter form -->
-  <form id="contactForm">
+  <div class="row">
 
-    <!-- Name -->
-    <div class="mb-3">
-      <label class="form-label" for="name">Name</label>
-      <input class="form-control" id="name" type="text" placeholder="Name" />
+
+
+    <div class="col-lg-6">
+      <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/contact.jpg" class="pt-5" width="100%" alt="">
     </div>
+    <div class="col-lg-6">
+      <form method="POST" action="<?php echo $DOMAIN ?>/Contact/Thank" id="contactForm">
 
-    <!-- Email address-->
-    <div class="mb-3">
-      <label class="form-label" for="emailAddress">Email Address</label>
-      <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" />
+        <!-- Name -->
+        <div class="mb-3">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-control" id="name-contact" type="text" placeholder="Name" required />
+        </div>
+        <!-- Email address-->
+        <div class="mb-3">
+          <label class="form-label" for="emailAddress">Email Address</label>
+          <input class="form-control" id="emailAddress-contact" type="email" placeholder="Email Address" name="_replyto" required />
+        </div>
+        <!-- Message-->
+        <div class="mb-3">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-control" id="message-contact" name="message" type="text" placeholder="Message" required style="height: 10rem;"></textarea>
+        </div>
+        <!-- submit button -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg send-message mb-4 mt-2">Send Message</button>
+        </div>
+
+      </form>
     </div>
-
-    <!-- Message-->
-    <div class="mb-3">
-      <label class="form-label" for="message">Message</label>
-      <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;"></textarea>
-    </div>
-
-    <!-- submit button -->
-    <div class="d-grid">
-      <button class="btn btn-primary btn-lg send-message">Send Message</button>
-    </div>
-
-  </form>
+  </div>
 
 </div>
-
