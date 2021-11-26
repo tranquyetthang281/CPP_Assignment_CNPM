@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2021 lúc 11:16 AM
+-- Thời gian đã tạo: Th10 26, 2021 lúc 01:55 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.10
+-- Phiên bản PHP: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `username`, `password`, `level`, `name`, `phoneNumber`, `email`, `address`, `state`) VALUES
-(1, 'minhtoan', '1915564', 2, 'Trần Minh', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1),
+(1, 'minhtoan', '1915564', 2, 'Trần Minh Toàn', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1),
 (3, 'admin', 'admin', 1, 'Admin', '', '', '', 1),
 (6, 'thayboingugat', '28012001', 2, 'Thắng', '', '', '', 1);
 
@@ -69,7 +69,8 @@ INSERT INTO `auto_ma_dat_phong` (`id`) VALUES
 (4),
 (5),
 (6),
-(7);
+(7),
+(8);
 
 -- --------------------------------------------------------
 
@@ -156,7 +157,6 @@ INSERT INTO `item` (`id`, `category_id`, `name`, `price`, `description`, `calori
 --
 
 CREATE TABLE `item_in_cart` (
-  `id` int(11) NOT NULL,
   `item_id` int(11) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
@@ -169,46 +169,46 @@ CREATE TABLE `item_in_cart` (
 -- Đang đổ dữ liệu cho bảng `item_in_cart`
 --
 
-INSERT INTO `item_in_cart` (`id`, `item_id`, `name`, `image`, `total_price`, `val`, `username`) VALUES
-(25, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
-(26, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
-(27, 5, 'Iced Tea', 'burger.png', 492, 4, 'toanem'),
-(28, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
-(29, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
-(30, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
-(31, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
-(32, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
-(33, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
-(34, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
-(35, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
-(36, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
-(37, 5, 'Iced Tea', 'burger.png', 246, 2, 'user1'),
-(38, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'user1'),
-(39, 71, 'Nothing', 'burger.png', 123, 1, 'user1'),
-(40, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'user1'),
-(41, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
-(42, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
-(43, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
-(44, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
-(45, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
-(46, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
-(47, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
-(48, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
-(49, 2, 'Chocolate Shake', 'burger.png', 369, 3, 'minhtoan149'),
-(50, 3, 'Vanilla Shake', 'burger.png', 492, 4, 'minhtoan149'),
-(51, 5, 'Iced Tea', 'burger.png', 246, 2, 'minhtoan149'),
-(52, 71, 'Nothing', 'burger.png', 246, 2, 'minhtoan149'),
-(53, 2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
-(54, 3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
-(55, 5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
-(56, 71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
-(57, 2, 'Chocolate Shake', 'burger.png', 492, 4, 'minhtoan149'),
-(58, 3, 'Vanilla Shake', 'burger.png', 492, 4, 'minhtoan149'),
-(59, 5, 'Iced Tea', 'burger.png', 246, 2, 'minhtoan149'),
-(60, 71, 'Nothing', 'burger.png', 246, 2, 'minhtoan149'),
-(61, 71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat'),
-(62, 71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat'),
-(63, 71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat');
+INSERT INTO `item_in_cart` (`item_id`, `name`, `image`, `total_price`, `val`, `username`) VALUES
+(2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(5, 'Iced Tea', 'burger.png', 492, 4, 'toanem'),
+(71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(5, 'Iced Tea', 'burger.png', 246, 2, 'user1'),
+(3, 'Vanilla Shake', 'burger.png', 123, 1, 'user1'),
+(71, 'Nothing', 'burger.png', 123, 1, 'user1'),
+(2, 'Chocolate Shake', 'burger.png', 123, 1, 'user1'),
+(2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(2, 'Chocolate Shake', 'burger.png', 369, 3, 'minhtoan149'),
+(3, 'Vanilla Shake', 'burger.png', 492, 4, 'minhtoan149'),
+(5, 'Iced Tea', 'burger.png', 246, 2, 'minhtoan149'),
+(71, 'Nothing', 'burger.png', 246, 2, 'minhtoan149'),
+(2, 'Chocolate Shake', 'burger.png', 123, 1, 'toanem'),
+(3, 'Vanilla Shake', 'burger.png', 123, 1, 'toanem'),
+(5, 'Iced Tea', 'burger.png', 0, 0, 'toanem'),
+(71, 'Nothing', 'burger.png', 246, 2, 'toanem'),
+(2, 'Chocolate Shake', 'burger.png', 492, 4, 'minhtoan149'),
+(3, 'Vanilla Shake', 'burger.png', 492, 4, 'minhtoan149'),
+(5, 'Iced Tea', 'burger.png', 246, 2, 'minhtoan149'),
+(71, 'Nothing', 'burger.png', 246, 2, 'minhtoan149'),
+(71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat'),
+(71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat'),
+(71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat');
 
 -- --------------------------------------------------------
 
@@ -221,17 +221,19 @@ CREATE TABLE `order` (
   `orderDate` datetime DEFAULT NULL,
   `tableNumber` int(11) DEFAULT NULL,
   `totalPrice` int(11) DEFAULT NULL,
-  `stateID` int(11) DEFAULT NULL
+  `stateID` int(11) DEFAULT NULL,
+  `username` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `order`
 --
 
-INSERT INTO `order` (`orderID`, `orderDate`, `tableNumber`, `totalPrice`, `stateID`) VALUES
-('DH25112021000005', '2021-11-25 05:40:34', 12, 984, 2),
-('DH25112021000006', '2021-11-25 09:28:25', 123, 492, 2),
-('DH26112021000007', '2021-11-26 02:35:35', 20, 0, 2);
+INSERT INTO `order` (`orderID`, `orderDate`, `tableNumber`, `totalPrice`, `stateID`, `username`) VALUES
+('DH25112021000005', '2021-11-25 05:40:34', 12, 984, 2, ''),
+('DH25112021000006', '2021-11-25 09:28:25', 123, 492, 2, ''),
+('DH26112021000007', '2021-11-26 02:35:35', 20, 0, 2, ''),
+('DH26112021000008', '2021-11-26 01:54:19', 123, 9, 1, 'minhtoan');
 
 --
 -- Bẫy `order`
@@ -301,7 +303,6 @@ ALTER TABLE `item`
 -- Chỉ mục cho bảng `item_in_cart`
 --
 ALTER TABLE `item_in_cart`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `fk1_item_cart` (`item_id`);
 
 --
@@ -331,7 +332,7 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT cho bảng `auto_ma_dat_phong`
 --
 ALTER TABLE `auto_ma_dat_phong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -344,12 +345,6 @@ ALTER TABLE `category`
 --
 ALTER TABLE `item`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
-
---
--- AUTO_INCREMENT cho bảng `item_in_cart`
---
-ALTER TABLE `item_in_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
