@@ -37,7 +37,7 @@ class ItemModel extends Database
     //add item into item_in_cart
     function set_item_cart($username, $data)
     {
-        // $this->remove_item_cart($username);
+        $this->remove_item_cart($username);
         $sql = "INSERT INTO item_in_cart(item_id,name,image,total_price,val,username) values ";
         foreach ($data as $key => $value) {
             if ($key == 'token_user') {

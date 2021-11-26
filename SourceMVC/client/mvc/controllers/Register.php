@@ -14,7 +14,7 @@ class Register extends Controller
         $name = $_POST['fullName'];
         $account = $this->model("AccountModel");
         if ($account->checkAccount($username)) {
-            echo 'Tai khoan da ton tai';
+            echo 'That username is taken. Try another.';
         } else {
             $account->addAccount($username, $password, $name);
             echo 'valid';

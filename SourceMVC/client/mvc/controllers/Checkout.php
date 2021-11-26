@@ -6,7 +6,7 @@ class Checkout extends Controller
         $data['page'] = 'Checkout';
         echo ($this->view('Home', $data));
     }
-    function doCheckOut()
+    function doCheckout()
     {
         $tableNum = (int)$_POST['tableNumber'];
         $total = 0;
@@ -16,10 +16,16 @@ class Checkout extends Controller
             } else
                 $total += (int)$val['total_price'];
         }
-        $order = $this->model("Order");
+        $order = $this->model("OrderModel");
         $orderDate = date("Y-m-d h:i:s");
-        $order->doOrder($orderDate, $tableNum, $total);
-        session_destroy();
+        $username = 'NONE';
+        if (is_logged()) {
+            $username = is_logged()['username'];
+        }
+        $order->doOrder($orderDate, $tableNum, $total, $username);
+        require_once "Cart.php";
+        $cart = new Cart();
+        $cart->RemoveAll();
         echo 'success';
     }
 }

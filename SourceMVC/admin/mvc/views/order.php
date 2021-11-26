@@ -16,6 +16,7 @@
             <th scope="col">Số bàn</th>
             <th scope="col">Đơn giá</th>
             <th scope="col">Trạng thái</th>
+            <th scope="col">Username</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -34,6 +35,7 @@
                             <?php echo $value['stateName'] ?>
                         </a>
                     </td>
+                    <td><?php echo $value['username'] ?></td>
                     <td style="display:flex">
                         <a class="text-danger" href="<?php echo $DOMAIN ?>/Order/deleteOrder/<?php echo $value['orderID'] ?>">
                             Delete

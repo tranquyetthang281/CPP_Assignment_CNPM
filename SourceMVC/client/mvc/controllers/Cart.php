@@ -44,7 +44,7 @@ class Cart extends Controller
         ss_delete($item_info['name']);
         echo ($this->view('Cart'));
     }
-    function RemoveAll()
+    public function RemoveAll()
     {
         if ($_SESSION) {
             foreach ($_SESSION as $key => $val) {

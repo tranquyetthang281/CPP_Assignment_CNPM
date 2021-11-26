@@ -1,4 +1,4 @@
-var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC/SourceMVC";
+var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC";
 var cardDrop = document.getElementById("card-dropdown");
 var activeDropdown;
 cardDrop.addEventListener("click", function () {
@@ -11,7 +11,7 @@ cardDrop.addEventListener("click", function () {
 });
 
 window.onclick = function (e) {
-    var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC/SourceMVC";
+    var DOMAIN = "http://localhost/CPP_Assignment_CNPM/SourceMVC";
 
     if (e.target.tagName === "LI" && activeDropdown) {
         if (e.target.innerHTML === "Zalo Pay") {
@@ -58,13 +58,13 @@ $(".pay-btn").click(function () {
         }
     });
     if (flag == true) {
-        $(".err").text("You must fill in all the boxes");
+        $(".err").text("Please complete required fields");
         setTimeout(function () {
             $(".err").text("");
         }, 1500);
     } else {
         $.ajax({
-            url: DOMAIN + "/Checkout/doCheckOut",
+            url: DOMAIN + "/Checkout/doCheckout",
             type: "post",
             data: {
                 tableNumber: $("#tableNum").val(),

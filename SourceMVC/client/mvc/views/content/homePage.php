@@ -45,14 +45,14 @@
                                     <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/<?php echo $item['image'] ?>" alt="  " />
                                 </div>
                                 <div class="name"><?php echo $item['name'] ?></div>
-                                <div class="price"><?php echo $item['price'] ?></div>
+                                <div class="price"><?php echo $item['price'] ?> $</div>
                                 <div class="buy-now item<?php echo $item['id'] ?>">Buy Now</div>
                             </div>
                     <?php }
                     } ?>
                 </div>
             </div>
-            <a href="<?php echo $DOMAIN ?>/Category/getCategory/<?php echo $value['category']['id'] ?>" class="read-more">Read more</a>
+            <a href="<?php echo $DOMAIN ?>/Category/getCategory/<?php echo $value['category']['id'] . "/" .  $value['category']['name']?>" class="read-more">Read more</a>
         </div>
     <?php }
     ?>

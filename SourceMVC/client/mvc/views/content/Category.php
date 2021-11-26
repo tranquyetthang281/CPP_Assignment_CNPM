@@ -3,7 +3,7 @@
 <div class="menu mx-auto">
     <div class="category mx-auto" id="menu1">
         <div class="title">
-            <h1>Burger Menu</h1>
+            <h1><?php echo $data['category']?> Menu</h1>
         </div>
         <div class="list-item">
             <div class="d-flex justify-content-start flex-wrap">
@@ -17,7 +17,7 @@
                         </div>
                         <div class=" name"><?php echo $item['name'] ?>
                         </div>
-                        <div class="price"><?php echo $item['price'] ?></div>
+                        <div class="price"><?php echo $item['price'] ?> $</div>
                         <div class="buy-now item<?php echo $item['id'] ?>">Buy Now</div>
                     </div>
                 <?php

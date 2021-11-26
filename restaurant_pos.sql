@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2021 lúc 04:21 PM
+-- Thời gian đã tạo: Th10 26, 2021 lúc 11:16 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 7.3.30
+-- Phiên bản PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,10 +45,8 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`id`, `username`, `password`, `level`, `name`, `phoneNumber`, `email`, `address`, `state`) VALUES
 (1, 'minhtoan', '1915564', 2, 'Trần Minh', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1),
-(2, 'toanem', '1234', 2, 'Minh Toàn', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1),
 (3, 'admin', 'admin', 1, 'Admin', '', '', '', 1),
-(4, 'user1', 'user1', 2, 'User1', '', '', '', 1),
-(5, 'minhtoan149', 'minhtoan149', 2, 'toan', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1);
+(6, 'thayboingugat', '28012001', 2, 'Thắng', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -70,7 +68,8 @@ INSERT INTO `auto_ma_dat_phong` (`id`) VALUES
 (3),
 (4),
 (5),
-(6);
+(6),
+(7);
 
 -- --------------------------------------------------------
 
@@ -89,7 +88,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'Beverages'),
-(2, 'Breakfast'),
+(2, 'Potato'),
 (3, 'Chicken'),
 (4, 'Burgers'),
 (5, 'Salads');
@@ -115,30 +114,40 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `category_id`, `name`, `price`, `description`, `calories`, `image`) VALUES
-(2, 1, 'Chocolate Shake', 123, 'Milk, Sugar, Cream, Corn Syrup, Natural Flavor, Mono and Diglycerides, Cellulose Gum, Guar Gum, Carrageenan, Vitamin A Palmitate', 520, 'burger.png'),
-(3, 1, 'Vanilla Shake', 123, 'Milk, Sugar, Cream, Corn Syrup, Natural Flavor, Mono and Diglycerides, Cellulose Gum, Guar Gum, Carrageenan, Vitamin A Palmitate', 820, 'burger.png'),
-(5, 1, 'Iced Tea', 123, 'Water, Orange Pekoe and Pekoe Cut Black Tea., ice', 2, 'burger.png'),
-(8, 2, 'Hotcakes', 123, 'Water, Enriched Flou, Whey, Corn Flour, Soybean Oil, Sugar, Eggs, Leavening, Dextrose, Emulsifier, Salt, Xanthan Gum, Natural Flavors, Beta Carotene (Color), Soy Lecithin.', 330, 'burger.png'),
-(9, 2, 'Hash Browns', 123, 'Hash Browns Ingredients: Potatoes, Vegetable Oil, Salt, Corn Flour, Dehydrated Potato, Dextrose, Sodium Acid Pyrophosphate (maintain Color), Extractives Of Black Pepper.', 140, 'burger.png'),
-(13, 3, 'Chicken McNuggets', 123, 'White Boneless Chicken, Water, Vegetable Oil (Canola Oil, Corn Oil, Soybean Oil, Hydrogenated Soybean Oil,..', 420, 'burger.png'),
-(14, 4, 'Big Mac Burger', 123, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 550, 'burger.png'),
-(19, 2, 'Hash Browns', 123, 'Hash Browns Ingredients: Potatoes, Vegetable Oil, Salt, Corn Flour, Dehydrated Potato, Dextrose, Sodium Acid Pyrophosphate (maintain Color), Extractives Of Black Pepper.', 140, 'burger.png'),
-(20, 3, 'Chicken McNuggets', 123, 'White Boneless Chicken, Water, Vegetable Oil (Canola Oil, Corn Oil, Soybean Oil, Hydrogenated Soybean Oil,..', 420, 'burger.png'),
-(27, 4, 'Big Mac Burger', 123, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 550, 'burger.png'),
-(28, 4, 'Big Mac Burger', 123, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 550, 'burger.png'),
-(29, 4, 'Big Mac Burger', 123, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 550, 'burger.png'),
-(38, 2, 'item', 123, '123', 123, 'burger.png'),
-(51, 3, 'item', 3123, '3123', 123123, 'burger.png'),
-(57, 3, 'item', 123, '123', 123, 'burger.png'),
-(69, 5, 'item', 123123, 'd', 123123, 'burger.png'),
-(70, 5, 'item', 12123, '123', 123, 'burger.png'),
-(71, 1, 'Nothing', 123, 'Nothing', 123, 'burger.png'),
-(74, 5, 'item', 123, '123', 123, 'burger.png'),
-(75, 5, 'item', 123, '123', 123, 'burger.png'),
-(76, 1, 'item', 123, '1123', 123123, 'burger.png'),
-(77, 2, 'item', 123, '123', 123, 'burger.png'),
-(78, 3, 'item', 123, '123', 123, 'burger.png'),
-(79, 1, 'item', 3333, '333', 3333, 'burger.png');
+(2, 1, 'Cocacola Bottle', 2, 'Milk, Sugar, Cream, Corn Syrup, Natural Flavor, Mono and Diglycerides, Cellulose Gum, Guar Gum, Carrageenan, Vitamin A Palmitate', 330, 'coca1.png'),
+(3, 1, 'Cocacola', 2, 'Milk, Sugar, Cream, Corn Syrup, Natural Flavor, Mono and Diglycerides, Cellulose Gum, Guar Gum, Carrageenan, Vitamin A Palmitate', 330, 'coca2.png'),
+(5, 1, 'Lemon Juice', 3, 'Water, Orange Pekoe and Pekoe Cut Black Tea., ice', 2, 'lemon.png'),
+(8, 2, 'Potato Big', 2, 'Potato is an instant messaging tool focused on security. It is faster, safer, more open and completely free', 180, 'potato.png'),
+(9, 2, 'Potato Small', 1, 'Potato is an instant messaging tool focused on security. It is faster, safer, more open and completely free', 140, 'potato3.png'),
+(13, 3, 'Chicken McNuggets', 6, 'White Boneless Chicken, Water, Vegetable Oil (Canola Oil, Corn Oil, Soybean Oil, Hydrogenated Soybean Oil,..', 420, 'chicken (2).png'),
+(14, 4, 'Big Mac Burger', 5, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 550, 'buger5.png'),
+(19, 2, 'Potato slices', 1, 'Potato is an instant messaging tool focused on security. It is faster, safer, more open and completely free', 140, 'potato2.png'),
+(20, 3, 'Combo Chicken', 4, 'White Boneless Chicken, Water, Vegetable Oil (Canola Oil, Corn Oil, Soybean Oil, Hydrogenated Soybean Oil,..', 350, 'chicken.png'),
+(27, 4, 'Big Burger', 4, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 500, 'burger.png'),
+(28, 4, 'Mac Burger', 6, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 330, 'burger1.png'),
+(29, 4, 'Medium Mac Burger', 4, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 300, 'burger2.png'),
+(38, 2, 'Mashed Potato', 2, 'Potato is an instant messaging tool focused on security. It is faster, safer, more open and completely free', 120, 'potato4.png'),
+(51, 3, 'Chicken Small', 2, 'Chicken is an instant messaging tool focused on security. It is faster, safer, more open and completely free', 120, 'chicken2.png'),
+(57, 3, 'Chicken Big Max', 25, 'The chicken (Gallus gallus domesticus) is a domesticated subspecies of the red junglefowl originally from Southeastern Asia. Rooster or cock is a term for an adult male bird, and younger male may be called a cockerel. A male that has been castrated is a capon. An adult female bird is called a hen and a sexually immature female is called a pullet.', 500, 'chicken4.png'),
+(69, 5, 'Salat 1', 1, 'A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.  chicken salad', 50, 'salat1.png'),
+(70, 5, 'Salat 2', 2, 'A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.  chicken salad', 50, 'salat2.png'),
+(71, 1, 'Pepsi', 2, 'Carbonated Water, High Fructose Corn Syrup, Caramel Color, Sugar, Phosphoric Acid, Caffeine, Citric Acid', 330, 'pepsi1.png'),
+(74, 5, 'Salat 3', 1, 'A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.  chicken salad', 50, 'salat3.png'),
+(75, 5, 'Salat 4', 2, 'A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.  chicken salad', 60, 'salat4.png'),
+(76, 1, 'Sprite', 2, 'Carbonated Water, High Fructose Corn Syrup, Caramel Color, Sugar, Phosphoric Acid, Caffeine, Citric Acid', 320, 'sprite2.png'),
+(78, 3, 'Chicken Medium', 15, 'The chicken (Gallus gallus domesticus) is a domesticated subspecies of the red junglefowl originally from Southeastern Asia. Rooster or cock is a term for an adult male bird, and younger male may be called a cockerel. A male that has been castrated is a capon. An adult female bird is called a hen and a sexually immature female is called a pullet.', 350, 'chicken 8.png'),
+(79, 1, 'Sprite Bottle', 2, 'Carbonated Water, High Fructose Corn Syrup, Caramel Color, Sugar, Phosphoric Acid, Caffeine, Citric Acid', 330, 'sprite1.png'),
+(80, 1, 'Pepsi Bottle', 2, 'Carbonated Water, High Fructose Corn Syrup, Caramel Color, Sugar, Phosphoric Acid, Caffeine, Citric Acid', 320, 'pepsi2.png'),
+(81, 1, 'Orange Juice', 3, 'Carbonated Water, High Fructose Corn Syrup, Caramel Color, Sugar, Phosphoric Acid, Caffeine, Citric Acid', 220, 'orange.png'),
+(82, 3, 'Chicken Small Combo ', 12, 'The chicken (Gallus gallus domesticus) is a domesticated subspecies of the red junglefowl originally from Southeastern Asia. Rooster or cock is a term for an adult male bird, and younger male may be called a cockerel. A male that has been castrated is a capon. An adult female bird is called a hen and a sexually immature female is called a pullet.', 400, 'chicken 10.png'),
+(83, 4, 'Combo Medium Burger', 6, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 550, 'burger4.png'),
+(84, 4, 'Small Burger', 3, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 150, 'burger3.png'),
+(85, 4, 'Small Burger 2', 3, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 120, 'burger6.png'),
+(86, 4, 'Chicken Burger', 5, 'Enriched Flour (Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Water, Sugar, Yeast,...', 200, 'burger7.png'),
+(88, 5, 'Salat 5', 2, 'A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.  chicken salad', 60, 'salat5 (2).png'),
+(89, 5, 'Salat 6', 1, 'A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.  chicken salad', 40, 'salat5.png'),
+(90, 5, 'Salat 7', 2, 'A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.  chicken salad', 65, 'salat7.png'),
+(91, 5, 'Salat 8', 2, 'A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.  chicken salad', 80, 'salat8.png');
 
 -- --------------------------------------------------------
 
@@ -196,7 +205,10 @@ INSERT INTO `item_in_cart` (`id`, `item_id`, `name`, `image`, `total_price`, `va
 (57, 2, 'Chocolate Shake', 'burger.png', 492, 4, 'minhtoan149'),
 (58, 3, 'Vanilla Shake', 'burger.png', 492, 4, 'minhtoan149'),
 (59, 5, 'Iced Tea', 'burger.png', 246, 2, 'minhtoan149'),
-(60, 71, 'Nothing', 'burger.png', 246, 2, 'minhtoan149');
+(60, 71, 'Nothing', 'burger.png', 246, 2, 'minhtoan149'),
+(61, 71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat'),
+(62, 71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat'),
+(63, 71, 'Nothing', 'burger.png', 492, 4, 'thayboingugat');
 
 -- --------------------------------------------------------
 
@@ -217,8 +229,9 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`orderID`, `orderDate`, `tableNumber`, `totalPrice`, `stateID`) VALUES
-('DH25112021000005', '2021-11-25 05:40:34', 12, 984, 1),
-('DH25112021000006', '2021-11-25 09:28:25', 123, 492, 2);
+('DH25112021000005', '2021-11-25 05:40:34', 12, 984, 2),
+('DH25112021000006', '2021-11-25 09:28:25', 123, 492, 2),
+('DH26112021000007', '2021-11-26 02:35:35', 20, 0, 2);
 
 --
 -- Bẫy `order`
@@ -312,13 +325,13 @@ ALTER TABLE `state`
 -- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `auto_ma_dat_phong`
 --
 ALTER TABLE `auto_ma_dat_phong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -330,13 +343,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT cho bảng `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT cho bảng `item_in_cart`
 --
 ALTER TABLE `item_in_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

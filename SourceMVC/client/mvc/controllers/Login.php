@@ -14,7 +14,7 @@ class Login extends Controller
         $username = $_POST['username'];
         $password = $_POST['password'];
         if (!$account->checkAccount($username)) {
-            echo 'Tai khoan khong ton tai';
+            echo 'notvalid';
         } else if ($password != $account->checkAccount($username)['password']) {
             echo 'error';
         } else if ((int)$account->checkAccount($username)['state'] == 2) {
@@ -60,7 +60,7 @@ class Login extends Controller
             $account = $this->model("AccountModel");
             $user = $account->checkAccount(is_logged()['username']);
             if ($oldPass != $user['password']) {
-                echo 'Mat khau cu bi sai';
+                echo 'Wrong Password. Please try again';
             } else {
                 $account->changePass($user['username'], $newPass);
                 echo 'valid';
@@ -112,9 +112,7 @@ class Login extends Controller
                     ss_delete($key);
                 }
             }
-            if ($data) {
-                $item->set_item_cart($userInfo['username'], $data);
-            }
+            $item->set_item_cart($userInfo['username'], $data);
         } else echo 'ERROR';
     }
 }

@@ -3,7 +3,7 @@ class OrderModel extends Database
 {
     function get_all_order()
     {
-        $sql = "SELECT `order`.`orderID`, `order`.`orderDate`,`order`.`tableNumber`,`order`.`totalPrice`,state.stateName FROM `order` INNER JOIN state where `order`.`stateID` = state.stateID order BY `stateName`DESC";
+        $sql = "SELECT `order`.`orderID`, `order`.`orderDate`,`order`.`tableNumber`,`order`.`totalPrice`,state.stateName,username FROM `order` INNER JOIN state where `order`.`stateID` = state.stateID order BY `stateName`DESC";
         return $this->get_list($sql);
     }
     function update_state($orderID)
