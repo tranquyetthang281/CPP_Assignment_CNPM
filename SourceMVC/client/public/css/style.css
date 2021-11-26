@@ -47,8 +47,10 @@ body::-webkit-scrollbar {
 }
 .search-box .image img {
     margin-left: 20px;
-    width: 100px;
-    height: 80px;
+    max-height: 100px;
+    max-width: 100px;
+    height: auto;
+    width: auto;
     background-repeat: no-repeat;
     background-size: contain;
     transition: 0.2s linear;
