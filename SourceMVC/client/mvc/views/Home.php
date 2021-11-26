@@ -32,8 +32,10 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
             <input type="text" class="form-control search-item" placeholder="Search..." />
             <ion-icon class="icon-search" name="search-outline"></ion-icon>
         </div>
-        <!-- <div>About us</div>
-        <div>Contact us</div> -->
+        <!-- <div>About us</div> -->
+        <div class="contact">
+            <a href="<?php echo $DOMAIN ?>/Contact/Show"> Contact us </a>
+        </div>
         <div class="user-action">
             <?php if (isset($_SESSION['token_user'])) { ?>
                 <a href="<?php echo $DOMAIN ?>/Login/accountPage">Hello, <?php echo is_logged()['username'] ?></a>
