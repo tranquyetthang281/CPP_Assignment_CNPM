@@ -58,7 +58,7 @@ $(".pay-btn").click(function () {
         }
     });
     if (flag == true) {
-        $(".err").text("You must fill in all the boxes");
+        $(".err").text("Please complete required fields");
         setTimeout(function () {
             $(".err").text("");
         }, 1500);

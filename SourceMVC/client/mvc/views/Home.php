@@ -16,14 +16,24 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/style.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/header.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/banner.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/footer.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/menu.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/cart.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/detail.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/checkout.css" />
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/profile.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/style.css" />
+    <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/loginRegister.css" />
 
     <title>Document</title>
 </head>
 
 <body>
     <!-- header start -->
+
+
     <header>
         <div class="title">
             <a href="<?php echo $DOMAIN ?>" style="text-decoration: none;">
@@ -152,9 +162,13 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
                                 <h3 class="footer-block-title">Thưởng thức theo cách của bạn</h3>
                                 <ul>
                                     <li><a href="<?php echo $DOMAIN ?>" style="text-decoration: none;">
+<<<<<<< HEAD
                                             <img src="http://localhost/Project/LapTrinhWeb/assignment/SourceMVC/images/logo.png" height="150px" style="margin-left: 100px;"></a></li>
 
                                    
+=======
+                                            <img src="http://localhost/CPP_Assignment_CNPM/SourceMVC/images/logo.png" height="150px" style="margin-left: 100px;"></a></li>
+>>>>>>> 962229e5764ef054ed13d88f99010a2f77724e7d
                                 </ul>
                             </div>
                         </div>

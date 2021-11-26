@@ -116,12 +116,17 @@ $(".login-button").click(function () {
             },
             success: function (result) {
                 if (result == "error") {
-                    $(".err").text("Mat khau bi sai");
+                    $(".err").text("Wrong Password. Please try again.");
+                    setTimeout(() => {
+                        $(".err").text("");
+                    }, 1500);
+                } else if (result == "notvalid") {
+                    $(".err").text("Username does not exist");
                     setTimeout(() => {
                         $(".err").text("");
                     }, 1500);
                 } else if (result == "banned") {
-                    $(".err").text("Tai khoan cua ban bi khoa vui long lien he quan tri vien");
+                    $(".err").text("Your account has been banned. Please contact administrators");
                     setTimeout(() => {
                         $(".err").text("");
                     }, 1500);
@@ -136,7 +141,7 @@ $(".login-button").click(function () {
 $(".register-button").click(function () {
     if ($(".username-input").val() && $(".password-input").val() && $(".repassword-input").val() && $(".name-input").val()) {
         if ($(".password-input").val() != $(".repassword-input").val()) {
-            $(".err").text("Mat khau khong dung");
+            $(".err").text("Password must match");
             setTimeout(() => {
                 $(".err").text("");
             }, 1000);
@@ -154,16 +159,21 @@ $(".register-button").click(function () {
                         $(".err").text(result);
                         setTimeout(() => {
                             $(".err").text("");
-                        }, 1000);
+                        }, 1500);
                     } else {
                         $(".succ").text("Success");
                         setTimeout(() => {
                             window.location.href = DOMAIN + "/Login/loginPage";
-                        }, 1000);
+                        }, 1500);
                     }
                 },
             });
         }
+    } else {
+        $(".err").text("Please complete required fields");
+        setTimeout(() => {
+            $(".err").text("");
+        }, 1500);
     }
 });
 $(".changePass-button").click(function () {
@@ -211,7 +221,6 @@ $(".profile-button").click(function () {
         },
     });
 });
-
-$(".send-message").click(function() {
-    animationMessageCart();
+$(".register-direct").click(function () {
+    window.location.href = DOMAIN + "/Register/registerPage";
 });
