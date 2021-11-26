@@ -301,7 +301,8 @@ header .count-item {
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    width: 140px;
+    max-height: 100px;
+    max-width: 140px;
     transition: 0.2s linear;
     cursor: pointer;
 }
@@ -681,6 +682,15 @@ header .count-item {
 .img-detail {
     width: 500px;
     height: 400px;
+}
+#img-detail{
+    position: static; 
+    transform: none; 
+    display: block; 
+    max-width:500px; 
+    max-height:300px; 
+    width: auto; 
+    height: auto;
 }
 .fade {
     font-family: block-pro, "Helvetica Neue", Verdana, Arial, sans-serif;

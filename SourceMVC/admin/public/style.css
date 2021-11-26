@@ -79,7 +79,8 @@ body {
 .item img {
     margin-top: 20px;
     position: absolute;
-    width: 150px;
+    max-width: 150px;
+    max-height: 110px;
     left: 50%;
     transform: translateX(-50%);
 }
