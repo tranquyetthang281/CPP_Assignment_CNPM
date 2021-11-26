@@ -8,8 +8,8 @@
             <label for="username">Password</label>
             <input type="password" required class="password-input form-control w-25" placeholder="Username">
         </div>
-        <div> <a href="<?php echo $DOMAIN ?>/Register/registerPage" class="ms-4">Register</a></div>
         <button type="submit" class="btn btn-primary mt-4 login-button">Login</button>
+        <button class="btn btn-primary mt-4  rgt-bt"><a href="<?php echo $DOMAIN ?>/Register/registerPage" >Register</a></button>
     </form>
     <div class="text-danger err mt-4"></div>
 </div>
