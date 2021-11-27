@@ -21,7 +21,9 @@
                     <td> <?php echo $value['address'] ?> </td>
                     <td class="text-primary ">
                         <a href="<?php echo $DOMAIN ?>/Account/LockAccount/<?php echo $value['username'] ?>">
-                            <?php echo $value['state'] == 1 ? 'Bình thường' : 'Bị Khóa' ?>
+                            
+                            <button type="button" class="btn btn-<?php echo $value['state'] == 1 ? 'secondary' : 'danger' ?>">
+                                <?php echo $value['state'] == 1 ? 'Bình thường' : 'Bị Khóa' ?></button>
                         </a>
                     </td>
 

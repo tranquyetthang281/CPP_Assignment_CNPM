@@ -32,13 +32,13 @@
                     <td><?php echo $value['totalPrice'] ?></td>
                     <td class="text-primary ">
                         <a href="<?php echo $DOMAIN ?>/Order/changeState/<?php echo $value['orderID'] ?>">
-                            <?php echo $value['stateName'] ?>
+                            <button type="button" class="btn btn-<?php if($value['stateName']=='Đã xác nhận') echo 'success'; else if($value['stateName']=='Chờ xác nhận') echo 'secondary'; else echo 'danger'; ?>"><?php echo $value['stateName'] ?></button>
                         </a>
                     </td>
                     <td><?php echo $value['username'] ?></td>
                     <td style="display:flex">
                         <a class="text-danger" href="<?php echo $DOMAIN ?>/Order/deleteOrder/<?php echo $value['orderID'] ?>">
-                            Delete
+                        <button type="button" class="btn btn-danger">Delete</button>
                         </a>
 
                     </td>
