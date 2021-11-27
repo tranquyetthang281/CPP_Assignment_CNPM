@@ -541,3 +541,11 @@ ul {
     left: 50%;
     transform: translateX(300px);
 }
+
+.send-message{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    margin: auto;
+}

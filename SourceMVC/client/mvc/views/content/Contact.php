@@ -30,8 +30,8 @@
           <textarea class="form-control" id="message-contact" name="message" type="text" placeholder="Message" required style="height: 10rem;"></textarea>
         </div>
         <!-- submit button -->
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary btn-lg send-message mb-4 mt-2">Send Message</button>
+        <div>
+          <button type="submit" class="btn btn-warning send-message">Send Message</button>
         </div>
 
       </form>
