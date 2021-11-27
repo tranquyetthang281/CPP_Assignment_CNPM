@@ -9,12 +9,13 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/admin';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="<?php echo $DOMAIN ?>/public/bootstrap5/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo $DOMAIN ?>/public/font-awesome/css/font-awesome.min.css" />
     <script src="<?php echo $DOMAIN ?>/public/bootstrap5/jquery.min.js"></script>
     <script src="<?php echo $DOMAIN ?>/public/bootstrap5/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/style.css" />
     <script src="<?php echo $DOMAIN ?>/public/script.js"></script>
 
-    <title>Document</title>
+    <title>Admin</title>
 </head>
 
 <?php
@@ -25,9 +26,9 @@ if (!is_admin()) {
 
 <body>
     <div class="header">
-        <h1> <?php echo $data['render'] == 'order' ? 'Quản lý đơn hàng' : 'Quản lý sản phẩm' ?>
+        <h1> <?php echo $data['render'] == 'order' ? 'Quản lý đơn hàng' : 'Quản lý sản phẩm'  ?>
         </h1>
-        <a style="position:absolute; right: 50px; top:10px;" href="http://localhost/CPP_Assignment_CNPM/SourceMVC/client/Login/Logout">Logout</a>
+        <a style="position:absolute; right: 50px; top:10px;" href="http://localhost/CPP_Assignment_CNPM/SourceMVC/client/Login/Logout"><i class="fa fa-sign-out text-warning" style="font-size: 40px;" aria-hidden="true"></i></a>
     </div>
     <div class="container">
         <div class="row mt-3">

@@ -27,7 +27,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/style.css" />
     <link rel="stylesheet" href=" <?php echo $DOMAIN ?>/public/css/loginRegister.css" />
 
-    <title>Document</title>
+    <title>Pop Restaurant</title>
 </head>
 
 <body>
