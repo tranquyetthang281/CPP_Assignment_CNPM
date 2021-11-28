@@ -37,4 +37,12 @@ class Order extends Controller
         $orderModel->remove_all();
         header("Location: http://localhost/CPP_Assignment_CNPM/SourceMVC/admin/Order/OrderPage");
     }
+    function searchOrder()
+    {
+        $keyword = $_POST['keyword'];
+        $orderModel = $this->model('OrderModel');
+        $orders = $orderModel->searchOrder($keyword);
+        $this->data['orderList'] = $orders;
+        echo $this->view('orderSearch', $this->data);
+    }
 }

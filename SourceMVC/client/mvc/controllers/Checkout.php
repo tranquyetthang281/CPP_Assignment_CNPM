@@ -17,6 +17,7 @@ class Checkout extends Controller
                 $total += (int)$val['total_price'];
         }
         $order = $this->model("OrderModel");
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
         $orderDate = date("Y-m-d h:i:s");
         $username = 'NONE';
         if (is_logged()) {
