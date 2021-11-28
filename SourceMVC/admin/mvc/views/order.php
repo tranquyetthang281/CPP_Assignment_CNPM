@@ -1,7 +1,7 @@
 <div class="manage-order">
-    <div class="search-title">Tìm kiếm</div>
+    <div class="search-title">Search</div>
     <div class="search-bar col-lg-6">
-        <input type="text" class="mt-3 form-control w-50 search-item" placeholder="Tìm kiếm theo mã đơn hàng..." />
+        <input type="text" class="mt-3 form-control w-50 search-item" placeholder="Search..." />
     </div>
     <a class="text-danger" href="<?php echo $DOMAIN ?>/Order/removeAll">
         Delete All
@@ -11,11 +11,11 @@
     <thead>
         <tr>
             <th scope="col">STT</th>
-            <th scope="col">Mã đơn hàng</th>
-            <th scope="col">Ngày đặt</th>
-            <th scope="col">Số bàn</th>
-            <th scope="col">Đơn giá</th>
-            <th scope="col">Trạng thái</th>
+            <th scope="col">Order ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Table number</th>
+            <th scope="col">Total Price</th>
+            <th scope="col">Status</th>
             <th scope="col">Username</th>
             <th scope="col">Action</th>
         </tr>
@@ -32,7 +32,7 @@
                     <td><?php echo $value['totalPrice'] ?></td>
                     <td class="text-primary ">
                         <a href="<?php echo $DOMAIN ?>/Order/changeState/<?php echo $value['orderID'] ?>">
-                            <button type="button" class="btn btn-<?php if($value['stateName']=='Đã xác nhận') echo 'success'; else if($value['stateName']=='Chờ xác nhận') echo 'secondary'; else echo 'danger'; ?>"><?php echo $value['stateName'] ?></button>
+                            <button type="button" class="btn btn-<?php if($value['stateName']=='Confirmed') echo 'success'; else if($value['stateName']=='Waiting') echo 'secondary'; else echo 'danger'; ?>"><?php echo $value['stateName'] ?></button>
                         </a>
                     </td>
                     <td><?php echo $value['username'] ?></td>

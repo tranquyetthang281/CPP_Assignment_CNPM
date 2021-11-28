@@ -3,7 +3,6 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/admin';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,7 +25,7 @@ if (!is_admin()) {
 
 <body>
     <div class="header">
-        <h1> <?php echo $data['render'] == 'order' ? 'Quản lý đơn hàng' : 'Quản lý sản phẩm'  ?>
+        <h1> <?php if( $data['render'] == 'order') echo 'Manage Orders'; else if($data['render'] == 'account') echo 'Manage Accounts'; else echo 'Manage Items' ?>
         </h1>
         <a style="position:absolute; right: 50px; top:10px;" href="http://localhost/CPP_Assignment_CNPM/SourceMVC/client/Login/Logout"><i class="fa fa-sign-out text-warning" style="font-size: 40px;" aria-hidden="true"></i></a>
     </div>

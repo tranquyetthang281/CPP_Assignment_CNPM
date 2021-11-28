@@ -6,7 +6,7 @@
             <th scope="col">PhoneNumber</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
-            <th scope="col">Trạng thái</th>
+            <th scope="col">Status</th>
 
         </tr>
     </thead>
@@ -23,7 +23,7 @@
                         <a href="<?php echo $DOMAIN ?>/Account/LockAccount/<?php echo $value['username'] ?>">
                             
                             <button type="button" class="btn btn-<?php echo $value['state'] == 1 ? 'secondary' : 'danger' ?>">
-                                <?php echo $value['state'] == 1 ? 'Bình thường' : 'Bị Khóa' ?></button>
+                                <?php echo $value['state'] == 1 ? 'Nomal' : 'Locked' ?></button>
                         </a>
                     </td>
 

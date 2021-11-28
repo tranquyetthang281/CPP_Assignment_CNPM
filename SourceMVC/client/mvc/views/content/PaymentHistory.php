@@ -2,11 +2,11 @@
     <thead>
         <tr>
             <th scope="col">STT</th>
-            <th scope="col">Mã đơn hàng</th>
-            <th scope="col">Ngày đặt</th>
-            <th scope="col">Số bàn</th>
-            <th scope="col">Đơn giá</th>
-            <th scope="col">Trạng thái</th>
+            <th scope="col">Order ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Table Number</th>
+            <th scope="col">Total Price</th>
+            <th scope="col">Status</th>
         </tr>
     </thead>
     <tbody>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2021 lúc 01:55 PM
+-- Thời gian đã tạo: Th10 28, 2021 lúc 08:22 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 7.3.30
+-- Phiên bản PHP: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,8 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`id`, `username`, `password`, `level`, `name`, `phoneNumber`, `email`, `address`, `state`) VALUES
 (1, 'minhtoan', '1915564', 2, 'Trần Minh Toàn', '0981710152', 'tranminhtoan.149@gmail.com', 'Nhà khách ĐHQG, Đông Hòa, Dĩ An', 1),
 (3, 'admin', 'admin', 1, 'Admin', '', '', '', 1),
-(6, 'thayboingugat', '28012001', 2, 'Thắng', '', '', '', 1);
+(6, 'thayboingugat', '28012001', 2, 'Thắng', '', '', '', 1),
+(7, 'tiendung', '123', 2, 'Dung', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,10 @@ INSERT INTO `auto_ma_dat_phong` (`id`) VALUES
 (5),
 (6),
 (7),
-(8);
+(8),
+(9),
+(10),
+(11);
 
 -- --------------------------------------------------------
 
@@ -230,10 +234,12 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`orderID`, `orderDate`, `tableNumber`, `totalPrice`, `stateID`, `username`) VALUES
-('DH25112021000005', '2021-11-25 05:40:34', 12, 984, 2, ''),
-('DH25112021000006', '2021-11-25 09:28:25', 123, 492, 2, ''),
-('DH26112021000007', '2021-11-26 02:35:35', 20, 0, 2, ''),
-('DH26112021000008', '2021-11-26 01:54:19', 123, 9, 1, 'minhtoan');
+('DH25112021000006', '2021-11-25 09:28:25', 123, 492, 3, ''),
+('DH26112021000007', '2021-11-26 02:35:35', 20, 0, 3, ''),
+('DH26112021000008', '2021-11-26 01:54:19', 123, 9, 3, 'minhtoan'),
+('DH28112021000009', '2021-11-28 04:30:32', 123123, 7, 3, 'tiendung'),
+('DH28112021000010', '2021-11-28 04:31:07', 123, 21, 3, 'tiendung'),
+('DH28112021000011', '2021-11-28 04:31:20', 123, 18, 3, 'tiendung');
 
 --
 -- Bẫy `order`
@@ -265,9 +271,9 @@ CREATE TABLE `state` (
 --
 
 INSERT INTO `state` (`stateID`, `stateName`) VALUES
-(1, 'Chờ xác nhận'),
-(2, 'Đã xác nhận'),
-(3, 'Hủy');
+(1, 'Waiting'),
+(2, 'Confirmed'),
+(3, 'Cancel');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -326,13 +332,13 @@ ALTER TABLE `state`
 -- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `auto_ma_dat_phong`
 --
 ALTER TABLE `auto_ma_dat_phong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `category`

@@ -19,7 +19,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-md">
-                                <label class="labels">Tên</label>
+                                <label class="labels">Full Name</label>
                                 <input type="text" class="form-control name-input" placeholder="Your name" value="<?php echo $data['userInfo']['name'] ?>" />
                             </div>
                         </div>
@@ -35,33 +35,32 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="labels">Mật khẩu</div>
+                            <div class="labels">Password</div>
                             <div class="password user-data">
-                                <p class="text-danger password-text" data-bs-toggle="modal" data-bs-target="#change-password">Đổi mật khẩu</p>
+                                <p class="text-danger password-text" data-bs-toggle="modal" data-bs-target="#change-password">Change Password</p>
                                 <!-- modal - change password -->
                                 <form action="" onsubmit="return false" style="color:black">
-                                    <div class="modal fade" id="change-password">
+                                    <div class="modal fade " id="change-password">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                <div class="modal-body mb-4">
+                                                <div class="modal-body ">
                                                     <div>
-                                                        <label for="old-pass" class="form-label">Mật khẩu cũ</label>
+                                                        <label for="old-pass" class="form-label">Old Password</label>
                                                         <input type="password" required class="form-control old-pass" />
                                                     </div>
                                                     <div>
-                                                        <label for="new-pass" class="form-label">Mật khẩu mới</label>
+                                                        <label for="new-pass" class="form-label">New Password</label>
                                                         <input type="password" required class="form-control new-pass" />
                                                     </div>
                                                     <div>
-                                                        <label for="re-new-pass" class="form-label">Nhập lại mật khẩu mới</label>
+                                                        <label for="re-new-pass" class="form-label">Re-enter New Password</label>
                                                         <input type="password" required class="form-control renew-pass" />
                                                     </div>
                                                     <div class="text-danger err"></div>
                                                     <div class="text-success succ"></div>
                                                 </div>
-
                                                 <div class="modal-footer">
-                                                    <input type="submit" class="form-control btn-danger w-50 changePass-button" value="Đổi mật khẩu" />
+                                                    <input type="submit" class="form-control btn-danger w-50 changePass-button" value="Change Password" />
                                                 </div>
                                             </div>
                                         </div>
