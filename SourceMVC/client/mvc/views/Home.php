@@ -159,7 +159,7 @@ $DOMAIN = 'http://localhost/CPP_Assignment_CNPM/SourceMVC/client';
                         <!--Block 3 -->
                         <div class="col-lg-4 col-md-4 col-sm">
                             <div class="footer-block">
-                                <h3 class="footer-block-title">Thưởng thức theo cách của bạn</h3>
+                                <h3 class="footer-block-title">Enjoy By Yoursefl</h3>
                                 <ul>
                                     <li><a href="<?php echo $DOMAIN ?>" style="text-decoration: none;">
 
