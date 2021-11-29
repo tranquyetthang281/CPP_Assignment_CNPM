@@ -49,7 +49,7 @@ $(".buy-now").click(function () {
     var item_id = $(this).attr("class").split(" ")[1].slice(4);
     $.ajax({
         url: DOMAIN + "/Cart/AddItem",
-        method: "post",
+        type: "post",
         data: {
             item_id: item_id,
         },
