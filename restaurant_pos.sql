@@ -6,7 +6,7 @@
 -- Thời gian đã tạo: Th10 28, 2021 lúc 08:22 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.23
-
+use restaurant_pos;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
